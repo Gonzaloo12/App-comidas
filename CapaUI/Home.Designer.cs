@@ -36,7 +36,6 @@ namespace TP_FINAL
             btnHome = new Button();
             menu_cate = new Panel();
             iniciarSesion = new Button();
-            registrate = new Button();
             menu_cate.SuspendLayout();
             SuspendLayout();
             // 
@@ -118,7 +117,6 @@ namespace TP_FINAL
             // 
             menu_cate.BackColor = Color.Transparent;
             menu_cate.Controls.Add(iniciarSesion);
-            menu_cate.Controls.Add(registrate);
             menu_cate.Location = new Point(1, 97);
             menu_cate.Name = "menu_cate";
             menu_cate.Size = new Size(1393, 585);
@@ -130,26 +128,13 @@ namespace TP_FINAL
             iniciarSesion.FlatStyle = FlatStyle.Flat;
             iniciarSesion.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             iniciarSesion.ForeColor = Color.White;
-            iniciarSesion.Location = new Point(257, 357);
+            iniciarSesion.Location = new Point(180, 361);
             iniciarSesion.Name = "iniciarSesion";
-            iniciarSesion.Size = new Size(150, 55);
+            iniciarSesion.Size = new Size(202, 63);
             iniciarSesion.TabIndex = 15;
             iniciarSesion.Text = "Iniciar Sesión";
             iniciarSesion.UseVisualStyleBackColor = false;
             iniciarSesion.Click += iniciarSesion_Click;
-            // 
-            // registrate
-            // 
-            registrate.BackColor = Color.FromArgb(255, 138, 0);
-            registrate.FlatStyle = FlatStyle.Flat;
-            registrate.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            registrate.ForeColor = Color.White;
-            registrate.Location = new Point(96, 357);
-            registrate.Name = "registrate";
-            registrate.Size = new Size(147, 55);
-            registrate.TabIndex = 14;
-            registrate.Text = "Registrate";
-            registrate.UseVisualStyleBackColor = false;
             // 
             // Home
             // 
@@ -175,7 +160,6 @@ namespace TP_FINAL
         private System.Windows.Forms.Button button1;
         private Button btnHome;
         private Button iniciarSesion;
-        private Button registrate;
         private Panel menu_cate;
     }
 }

@@ -33,7 +33,6 @@ namespace TP_FINAL
             nuevoMenu.FormBorderStyle = FormBorderStyle.None;
             nuevoMenu.Dock = DockStyle.Fill;
             menu_cate.Controls.Add(nuevoMenu);
-            this.registrate.Hide();
             this.iniciarSesion.Hide();
             nuevoMenu.Show();
 
