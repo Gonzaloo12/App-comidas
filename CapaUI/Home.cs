@@ -26,8 +26,7 @@ namespace TP_FINAL
 
         private void Menu_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 // ... (código para mostrar Menu_categoria)
                 var nuevoMenu = new Menu();
                 nuevoMenu.TopLevel = false;
@@ -37,11 +36,8 @@ namespace TP_FINAL
                 this.registrate.Hide();
                 this.iniciarSesion.Hide();
                 nuevoMenu.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
+            
+
 
 
         }
