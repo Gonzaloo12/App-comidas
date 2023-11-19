@@ -15,7 +15,7 @@ namespace TP_FINAL
         public modal()
         {
             InitializeComponent();
-            
+
         }
 
         private void modalSesion_TextChanged(object sender, EventArgs e)
@@ -38,9 +38,5 @@ namespace TP_FINAL
             this.Close();
         }
 
-        private void iniciarSesion_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

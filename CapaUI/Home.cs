@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,25 +18,6 @@ namespace TP_FINAL
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void AboutUs_Click(object sender, EventArgs e)
         {
@@ -44,8 +26,24 @@ namespace TP_FINAL
 
         private void Menu_Click(object sender, EventArgs e)
         {
-            var nuevoMenu = new Menu();
-            nuevoMenu.Show();
+            try
+            {
+                // ... (código para mostrar Menu_categoria)
+                var nuevoMenu = new Menu();
+                nuevoMenu.TopLevel = false;
+                nuevoMenu.FormBorderStyle = FormBorderStyle.None;
+                nuevoMenu.Dock = DockStyle.Fill;
+                menu_cate.Controls.Add(nuevoMenu);
+                this.registrate.Hide();
+                this.iniciarSesion.Hide();
+                nuevoMenu.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+
         }
 
         private void iniciarSesion_Click(object sender, EventArgs e)
@@ -57,6 +55,17 @@ namespace TP_FINAL
                 this.Location.X + (this.Width - modalSesion.Width) / 2,
                 this.Location.Y + (this.Height - modalSesion.Height) / 2);
             modalSesion.Show();
+
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            menu_cate.Controls.Clear();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

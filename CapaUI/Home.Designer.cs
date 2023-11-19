@@ -30,161 +30,153 @@ namespace TP_FINAL
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.registrate = new System.Windows.Forms.Button();
-            this.home = new System.Windows.Forms.Button();
-            this.AboutUs = new System.Windows.Forms.Button();
-            this.Menu = new System.Windows.Forms.Button();
-            this.iniciarSesion = new System.Windows.Forms.Button();
-            this.titulo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // registrate
-            // 
-            this.registrate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(118)))));
-            this.registrate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registrate.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.registrate.ForeColor = System.Drawing.Color.White;
-            this.registrate.Location = new System.Drawing.Point(82, 427);
-            this.registrate.Name = "registrate";
-            this.registrate.Size = new System.Drawing.Size(147, 55);
-            this.registrate.TabIndex = 0;
-            this.registrate.Text = "Registrate";
-            this.registrate.UseVisualStyleBackColor = false;
-            this.registrate.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Home
-            // 
-            this.home.BackColor = System.Drawing.Color.Transparent;
-            this.home.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.home.FlatAppearance.BorderSize = 0;
-            this.home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.home.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.home.ForeColor = System.Drawing.Color.Transparent;
-            this.home.Location = new System.Drawing.Point(40, 28);
-            this.home.Name = "Home";
-            this.home.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.home.Size = new System.Drawing.Size(128, 50);
-            this.home.TabIndex = 2;
-            this.home.Text = "Home";
-            this.home.UseVisualStyleBackColor = false;
-            this.home.Click += new System.EventHandler(this.button2_Click);
+            AboutUs = new Button();
+            Menu = new Button();
+            button1 = new Button();
+            btnHome = new Button();
+            menu_cate = new Panel();
+            iniciarSesion = new Button();
+            registrate = new Button();
+            menu_cate.SuspendLayout();
+            SuspendLayout();
             // 
             // AboutUs
             // 
-            this.AboutUs.BackColor = System.Drawing.Color.Transparent;
-            this.AboutUs.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.AboutUs.FlatAppearance.BorderSize = 0;
-            this.AboutUs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.AboutUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AboutUs.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AboutUs.ForeColor = System.Drawing.Color.Transparent;
-            this.AboutUs.Location = new System.Drawing.Point(163, 28);
-            this.AboutUs.Name = "AboutUs";
-            this.AboutUs.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.AboutUs.Size = new System.Drawing.Size(187, 50);
-            this.AboutUs.TabIndex = 3;
-            this.AboutUs.Text = "Sobre Nosotros";
-            this.AboutUs.UseVisualStyleBackColor = false;
-            this.AboutUs.Click += new System.EventHandler(this.AboutUs_Click);
+            AboutUs.BackColor = Color.Transparent;
+            AboutUs.FlatAppearance.BorderColor = Color.Black;
+            AboutUs.FlatAppearance.BorderSize = 0;
+            AboutUs.FlatAppearance.MouseDownBackColor = Color.Black;
+            AboutUs.FlatStyle = FlatStyle.Flat;
+            AboutUs.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            AboutUs.ForeColor = Color.Transparent;
+            AboutUs.Location = new Point(163, 28);
+            AboutUs.Name = "AboutUs";
+            AboutUs.Padding = new Padding(3, 0, 0, 0);
+            AboutUs.Size = new Size(187, 50);
+            AboutUs.TabIndex = 3;
+            AboutUs.Text = "Sobre Nosotros";
+            AboutUs.UseVisualStyleBackColor = false;
+            AboutUs.Click += AboutUs_Click;
             // 
             // Menu
             // 
-            this.Menu.BackColor = System.Drawing.Color.Transparent;
-            this.Menu.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Menu.FlatAppearance.BorderSize = 0;
-            this.Menu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Menu.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Menu.ForeColor = System.Drawing.Color.Transparent;
-            this.Menu.Location = new System.Drawing.Point(345, 28);
-            this.Menu.Name = "Menu";
-            this.Menu.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.Menu.Size = new System.Drawing.Size(124, 50);
-            this.Menu.TabIndex = 4;
-            this.Menu.Text = "Menú";
-            this.Menu.UseVisualStyleBackColor = false;
-            this.Menu.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // iniciarSesion
-            // 
-            this.iniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(118)))));
-            this.iniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iniciarSesion.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.iniciarSesion.Location = new System.Drawing.Point(243, 427);
-            this.iniciarSesion.Name = "iniciarSesion";
-            this.iniciarSesion.Size = new System.Drawing.Size(150, 55);
-            this.iniciarSesion.TabIndex = 6;
-            this.iniciarSesion.Text = "Iniciar Sesión";
-            this.iniciarSesion.UseVisualStyleBackColor = false;
-            this.iniciarSesion.Click += new System.EventHandler(this.iniciarSesion_Click);
-            // 
-            // titulo
-            // 
-            this.titulo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.titulo.BackColor = System.Drawing.Color.Black;
-            this.titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.titulo.Font = new System.Drawing.Font("Verdana", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.titulo.ForeColor = System.Drawing.Color.White;
-            this.titulo.Location = new System.Drawing.Point(54, 177);
-            this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(349, 202);
-            this.titulo.TabIndex = 7;
-            this.titulo.Text = "Fast Burger";
-            this.titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Menu.BackColor = Color.Transparent;
+            Menu.FlatAppearance.BorderColor = Color.Black;
+            Menu.FlatAppearance.BorderSize = 0;
+            Menu.FlatAppearance.MouseDownBackColor = Color.Black;
+            Menu.FlatStyle = FlatStyle.Flat;
+            Menu.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            Menu.ForeColor = Color.Transparent;
+            Menu.Location = new Point(345, 28);
+            Menu.Name = "Menu";
+            Menu.Padding = new Padding(3, 0, 0, 0);
+            Menu.Size = new Size(124, 50);
+            Menu.TabIndex = 4;
+            Menu.Text = "Menú";
+            Menu.UseVisualStyleBackColor = false;
+            Menu.Click += Menu_Click;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(478, 28);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 8;
-            this.button1.TabStop = false;
-            this.button1.Text = "Mi carrito";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = false;
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderColor = Color.Black;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Black;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.Transparent;
+            button1.Location = new Point(478, 28);
+            button1.Name = "button1";
+            button1.Padding = new Padding(3, 0, 0, 0);
+            button1.Size = new Size(120, 50);
+            button1.TabIndex = 8;
+            button1.TabStop = false;
+            button1.Text = "Mi carrito";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.TextImageRelation = TextImageRelation.TextBeforeImage;
+            button1.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // btnHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1394, 683);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.titulo);
-            this.Controls.Add(this.iniciarSesion);
-            this.Controls.Add(this.Menu);
-            this.Controls.Add(this.AboutUs);
-            this.Controls.Add(this.home);
-            this.Controls.Add(this.registrate);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-
+            btnHome.BackColor = Color.Transparent;
+            btnHome.BackgroundImageLayout = ImageLayout.None;
+            btnHome.FlatAppearance.BorderColor = Color.White;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHome.ForeColor = Color.Transparent;
+            btnHome.Location = new Point(54, 26);
+            btnHome.Name = "btnHome";
+            btnHome.Padding = new Padding(3, 0, 0, 0);
+            btnHome.Size = new Size(115, 50);
+            btnHome.TabIndex = 37;
+            btnHome.Text = "Home";
+            btnHome.UseVisualStyleBackColor = false;
+            btnHome.Click += btnHome_Click;
+            // 
+            // menu_cate
+            // 
+            menu_cate.BackColor = Color.Transparent;
+            menu_cate.Controls.Add(iniciarSesion);
+            menu_cate.Controls.Add(registrate);
+            menu_cate.Location = new Point(1, 97);
+            menu_cate.Name = "menu_cate";
+            menu_cate.Size = new Size(1393, 585);
+            menu_cate.TabIndex = 39;
+            // 
+            // iniciarSesion
+            // 
+            iniciarSesion.BackColor = Color.FromArgb(255, 138, 0);
+            iniciarSesion.FlatStyle = FlatStyle.Flat;
+            iniciarSesion.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            iniciarSesion.ForeColor = Color.White;
+            iniciarSesion.Location = new Point(257, 357);
+            iniciarSesion.Name = "iniciarSesion";
+            iniciarSesion.Size = new Size(150, 55);
+            iniciarSesion.TabIndex = 15;
+            iniciarSesion.Text = "Iniciar Sesión";
+            iniciarSesion.UseVisualStyleBackColor = false;
+            iniciarSesion.Click += iniciarSesion_Click;
+            // 
+            // registrate
+            // 
+            registrate.BackColor = Color.FromArgb(255, 138, 0);
+            registrate.FlatStyle = FlatStyle.Flat;
+            registrate.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            registrate.ForeColor = Color.White;
+            registrate.Location = new Point(96, 357);
+            registrate.Name = "registrate";
+            registrate.Size = new Size(147, 55);
+            registrate.TabIndex = 14;
+            registrate.Text = "Registrate";
+            registrate.UseVisualStyleBackColor = false;
+            // 
+            // Home
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1394, 683);
+            Controls.Add(menu_cate);
+            Controls.Add(btnHome);
+            Controls.Add(button1);
+            Controls.Add(Menu);
+            Controls.Add(AboutUs);
+            Name = "Home";
+            menu_cate.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
-
-        private System.Windows.Forms.Button registrate;
         private System.Windows.Forms.Button home;
         private System.Windows.Forms.Button AboutUs;
         private System.Windows.Forms.Button Menu;
-        private System.Windows.Forms.Button iniciarSesion;
-        private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.Button button1;
+        private Button btnHome;
+        private Button iniciarSesion;
+        private Button registrate;
+        private Panel menu_cate;
     }
 }
 
