@@ -25,7 +25,7 @@ namespace CapaUI
         {
             var bebida = new Bebida("bebida", "precio");
             var i = 0;
-            foreach (var bebidaNombre in bebida.GetBebidas())
+            foreach (var bebidaNombre in bebida.GetProducto())
             {
                 labelsPlatos[i].Text = bebidaNombre;
                 i++;
@@ -36,7 +36,7 @@ namespace CapaUI
         {
             var burger = new Burger("burger", "precio");
             var i = 0;
-            foreach (var burgerNombre in burger.GetBebidas())
+            foreach (var burgerNombre in burger.GetProducto())
             {
                 labelsPlatos[i].Text = burgerNombre;
                 i++;

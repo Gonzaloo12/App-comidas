@@ -16,7 +16,7 @@ namespace CapaNegocio
             this.nombre = nombre;
             this.precio = precio;
         }
-        public abstract List<string> GetBebidas();
+        public abstract List<string> GetProducto();
     }
 
     public class Bebida : Menu
@@ -30,7 +30,7 @@ namespace CapaNegocio
 
 
         }
-        public override List<string> GetBebidas()
+        public override List<string> GetProducto()
         {
             listaBebidas = new List<string>();
 
@@ -67,7 +67,7 @@ namespace CapaNegocio
 
 
         }
-        public override List<string> GetBebidas()
+        public override List<string> GetProducto()
         {
             listaBebidas = new List<string>();
 
