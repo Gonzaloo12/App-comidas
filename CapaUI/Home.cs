@@ -26,19 +26,16 @@ namespace TP_FINAL
 
         private void Menu_Click(object sender, EventArgs e)
         {
-            
-                // ... (código para mostrar Menu_categoria)
-                var nuevoMenu = new Menu();
-                nuevoMenu.TopLevel = false;
-                nuevoMenu.FormBorderStyle = FormBorderStyle.None;
-                nuevoMenu.Dock = DockStyle.Fill;
-                menu_cate.Controls.Add(nuevoMenu);
-                this.registrate.Hide();
-                this.iniciarSesion.Hide();
-                nuevoMenu.Show();
-            
 
-
+            // MUESTRA CATEGORIAS
+            var nuevoMenu = new Menu();
+            nuevoMenu.TopLevel = false;
+            nuevoMenu.FormBorderStyle = FormBorderStyle.None;
+            nuevoMenu.Dock = DockStyle.Fill;
+            menu_cate.Controls.Add(nuevoMenu);
+            this.registrate.Hide();
+            this.iniciarSesion.Hide();
+            nuevoMenu.Show();
 
         }
 

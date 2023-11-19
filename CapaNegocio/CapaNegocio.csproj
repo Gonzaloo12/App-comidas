@@ -53,5 +53,21 @@
       <Name>CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bebidas\agua.jpg" />
+    <Content Include="bebidas\brahma.jpg" />
+    <Content Include="bebidas\cocacola.jpg" />
+    <Content Include="bebidas\fanta.png" />
+    <Content Include="bebidas\paso de los toros.jpg" />
+    <Content Include="bebidas\sprite.jpeg" />
+    <Content Include="hamburguesas\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg" />
+    <Content Include="postre\alfajorvegano.jpg" />
+    <Content Include="postre\banana.jpg" />
+    <Content Include="postre\chocolate.jpg" />
+    <Content Include="postre\ddl.jpg" />
+    <Content Include="postre\frutilla.jpg" />
+    <Content Include="postre\limon.jpg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

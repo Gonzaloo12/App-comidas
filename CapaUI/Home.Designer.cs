@@ -105,7 +105,7 @@ namespace TP_FINAL
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnHome.ForeColor = Color.Transparent;
-            btnHome.Location = new Point(54, 26);
+            btnHome.Location = new Point(54, 27);
             btnHome.Name = "btnHome";
             btnHome.Padding = new Padding(3, 0, 0, 0);
             btnHome.Size = new Size(115, 50);

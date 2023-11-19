@@ -29,50 +29,50 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            button3 = new Button();
+            btncarrito6 = new Button();
             plato6 = new Label();
-            pictureBox1 = new PictureBox();
-            button8 = new Button();
+            imagen6 = new PictureBox();
+            btncarrito3 = new Button();
             plato3 = new Label();
-            pictureBox2 = new PictureBox();
-            button6 = new Button();
+            imagen3 = new PictureBox();
+            btncarrito5 = new Button();
             plato5 = new Label();
-            pictureBox5 = new PictureBox();
-            button7 = new Button();
+            imagen5 = new PictureBox();
+            btncarrito2 = new Button();
             plato2 = new Label();
-            pictureBox6 = new PictureBox();
-            button4 = new Button();
+            imagen2 = new PictureBox();
+            btncarrito4 = new Button();
             plato4 = new Label();
-            pictureBox3 = new PictureBox();
-            button5 = new Button();
+            imagen4 = new PictureBox();
+            btncarrito1 = new Button();
             plato1 = new Label();
-            pictureBox4 = new PictureBox();
+            imagen1 = new PictureBox();
             label7 = new Label();
-            postre = new Button();
-            bebidas = new Button();
-            burger = new Button();
+            btnPostre = new Button();
+            btnBebida = new Button();
+            btnBurger = new Button();
             label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imagen6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imagen3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imagen5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imagen2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imagen4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imagen1).BeginInit();
             SuspendLayout();
             // 
-            // button3
+            // btncarrito6
             // 
-            button3.BackColor = Color.FromArgb(255, 138, 0);
-            button3.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.ImeMode = ImeMode.NoControl;
-            button3.Location = new Point(1053, 493);
-            button3.Name = "button3";
-            button3.Size = new Size(241, 43);
-            button3.TabIndex = 157;
-            button3.Text = "Agregar al carrito";
-            button3.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button3.UseVisualStyleBackColor = false;
+            btncarrito6.BackColor = Color.FromArgb(255, 138, 0);
+            btncarrito6.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btncarrito6.ForeColor = Color.White;
+            btncarrito6.ImeMode = ImeMode.NoControl;
+            btncarrito6.Location = new Point(1053, 493);
+            btncarrito6.Name = "btncarrito6";
+            btncarrito6.Size = new Size(241, 43);
+            btncarrito6.TabIndex = 157;
+            btncarrito6.Text = "Agregar al carrito";
+            btncarrito6.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btncarrito6.UseVisualStyleBackColor = false;
             // 
             // plato6
             // 
@@ -87,30 +87,30 @@
             plato6.Text = "Hamburguesa simple con queso $3000";
             plato6.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // imagen6
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.ImeMode = ImeMode.NoControl;
-            pictureBox1.Location = new Point(1053, 315);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(241, 127);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 155;
-            pictureBox1.TabStop = false;
+            imagen6.Image = (Image)resources.GetObject("imagen6.Image");
+            imagen6.ImeMode = ImeMode.NoControl;
+            imagen6.Location = new Point(1053, 315);
+            imagen6.Name = "imagen6";
+            imagen6.Size = new Size(241, 127);
+            imagen6.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagen6.TabIndex = 155;
+            imagen6.TabStop = false;
             // 
-            // button8
+            // btncarrito3
             // 
-            button8.BackColor = Color.FromArgb(255, 138, 0);
-            button8.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.ForeColor = Color.White;
-            button8.ImeMode = ImeMode.NoControl;
-            button8.Location = new Point(1053, 226);
-            button8.Name = "button8";
-            button8.Size = new Size(241, 43);
-            button8.TabIndex = 154;
-            button8.Text = "Agregar al carrito";
-            button8.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button8.UseVisualStyleBackColor = false;
+            btncarrito3.BackColor = Color.FromArgb(255, 138, 0);
+            btncarrito3.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btncarrito3.ForeColor = Color.White;
+            btncarrito3.ImeMode = ImeMode.NoControl;
+            btncarrito3.Location = new Point(1053, 226);
+            btncarrito3.Name = "btncarrito3";
+            btncarrito3.Size = new Size(241, 43);
+            btncarrito3.TabIndex = 154;
+            btncarrito3.Text = "Agregar al carrito";
+            btncarrito3.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btncarrito3.UseVisualStyleBackColor = false;
             // 
             // plato3
             // 
@@ -125,30 +125,30 @@
             plato3.Text = "Hamburguesa simple con queso $3000";
             plato3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
+            // imagen3
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.ImeMode = ImeMode.NoControl;
-            pictureBox2.Location = new Point(1053, 48);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(241, 127);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 152;
-            pictureBox2.TabStop = false;
+            imagen3.Image = (Image)resources.GetObject("imagen3.Image");
+            imagen3.ImeMode = ImeMode.NoControl;
+            imagen3.Location = new Point(1053, 48);
+            imagen3.Name = "imagen3";
+            imagen3.Size = new Size(241, 127);
+            imagen3.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagen3.TabIndex = 152;
+            imagen3.TabStop = false;
             // 
-            // button6
+            // btncarrito5
             // 
-            button6.BackColor = Color.FromArgb(255, 138, 0);
-            button6.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.ForeColor = Color.White;
-            button6.ImeMode = ImeMode.NoControl;
-            button6.Location = new Point(748, 493);
-            button6.Name = "button6";
-            button6.Size = new Size(241, 43);
-            button6.TabIndex = 151;
-            button6.Text = "Agregar al carrito";
-            button6.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button6.UseVisualStyleBackColor = false;
+            btncarrito5.BackColor = Color.FromArgb(255, 138, 0);
+            btncarrito5.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btncarrito5.ForeColor = Color.White;
+            btncarrito5.ImeMode = ImeMode.NoControl;
+            btncarrito5.Location = new Point(748, 493);
+            btncarrito5.Name = "btncarrito5";
+            btncarrito5.Size = new Size(241, 43);
+            btncarrito5.TabIndex = 151;
+            btncarrito5.Text = "Agregar al carrito";
+            btncarrito5.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btncarrito5.UseVisualStyleBackColor = false;
             // 
             // plato5
             // 
@@ -163,30 +163,30 @@
             plato5.Text = "Hamburguesa simple con queso $3000";
             plato5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox5
+            // imagen5
             // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.ImeMode = ImeMode.NoControl;
-            pictureBox5.Location = new Point(748, 315);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(241, 127);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 149;
-            pictureBox5.TabStop = false;
+            imagen5.Image = (Image)resources.GetObject("imagen5.Image");
+            imagen5.ImeMode = ImeMode.NoControl;
+            imagen5.Location = new Point(748, 315);
+            imagen5.Name = "imagen5";
+            imagen5.Size = new Size(241, 127);
+            imagen5.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagen5.TabIndex = 149;
+            imagen5.TabStop = false;
             // 
-            // button7
+            // btncarrito2
             // 
-            button7.BackColor = Color.FromArgb(255, 138, 0);
-            button7.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.ForeColor = Color.White;
-            button7.ImeMode = ImeMode.NoControl;
-            button7.Location = new Point(748, 226);
-            button7.Name = "button7";
-            button7.Size = new Size(241, 43);
-            button7.TabIndex = 148;
-            button7.Text = "Agregar al carrito";
-            button7.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button7.UseVisualStyleBackColor = false;
+            btncarrito2.BackColor = Color.FromArgb(255, 138, 0);
+            btncarrito2.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btncarrito2.ForeColor = Color.White;
+            btncarrito2.ImeMode = ImeMode.NoControl;
+            btncarrito2.Location = new Point(748, 226);
+            btncarrito2.Name = "btncarrito2";
+            btncarrito2.Size = new Size(241, 43);
+            btncarrito2.TabIndex = 148;
+            btncarrito2.Text = "Agregar al carrito";
+            btncarrito2.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btncarrito2.UseVisualStyleBackColor = false;
             // 
             // plato2
             // 
@@ -201,30 +201,30 @@
             plato2.Text = "Hamburguesa simple con queso $3000";
             plato2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox6
+            // imagen2
             // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.ImeMode = ImeMode.NoControl;
-            pictureBox6.Location = new Point(748, 48);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(241, 127);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 146;
-            pictureBox6.TabStop = false;
+            imagen2.Image = (Image)resources.GetObject("imagen2.Image");
+            imagen2.ImeMode = ImeMode.NoControl;
+            imagen2.Location = new Point(748, 48);
+            imagen2.Name = "imagen2";
+            imagen2.Size = new Size(241, 127);
+            imagen2.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagen2.TabIndex = 146;
+            imagen2.TabStop = false;
             // 
-            // button4
+            // btncarrito4
             // 
-            button4.BackColor = Color.FromArgb(255, 138, 0);
-            button4.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.ImeMode = ImeMode.NoControl;
-            button4.Location = new Point(442, 493);
-            button4.Name = "button4";
-            button4.Size = new Size(241, 43);
-            button4.TabIndex = 145;
-            button4.Text = "Agregar al carrito";
-            button4.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button4.UseVisualStyleBackColor = false;
+            btncarrito4.BackColor = Color.FromArgb(255, 138, 0);
+            btncarrito4.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btncarrito4.ForeColor = Color.White;
+            btncarrito4.ImeMode = ImeMode.NoControl;
+            btncarrito4.Location = new Point(442, 493);
+            btncarrito4.Name = "btncarrito4";
+            btncarrito4.Size = new Size(241, 43);
+            btncarrito4.TabIndex = 145;
+            btncarrito4.Text = "Agregar al carrito";
+            btncarrito4.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btncarrito4.UseVisualStyleBackColor = false;
             // 
             // plato4
             // 
@@ -239,30 +239,30 @@
             plato4.Text = "Hamburguesa simple con queso $3000";
             plato4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox3
+            // imagen4
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.ImeMode = ImeMode.NoControl;
-            pictureBox3.Location = new Point(442, 315);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(241, 127);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 143;
-            pictureBox3.TabStop = false;
+            imagen4.Image = (Image)resources.GetObject("imagen4.Image");
+            imagen4.ImeMode = ImeMode.NoControl;
+            imagen4.Location = new Point(442, 315);
+            imagen4.Name = "imagen4";
+            imagen4.Size = new Size(241, 127);
+            imagen4.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagen4.TabIndex = 143;
+            imagen4.TabStop = false;
             // 
-            // button5
+            // btncarrito1
             // 
-            button5.BackColor = Color.FromArgb(255, 138, 0);
-            button5.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.ImeMode = ImeMode.NoControl;
-            button5.Location = new Point(442, 226);
-            button5.Name = "button5";
-            button5.Size = new Size(241, 43);
-            button5.TabIndex = 142;
-            button5.Text = "Agregar al carrito";
-            button5.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button5.UseVisualStyleBackColor = false;
+            btncarrito1.BackColor = Color.FromArgb(255, 138, 0);
+            btncarrito1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btncarrito1.ForeColor = Color.White;
+            btncarrito1.ImeMode = ImeMode.NoControl;
+            btncarrito1.Location = new Point(442, 226);
+            btncarrito1.Name = "btncarrito1";
+            btncarrito1.Size = new Size(241, 43);
+            btncarrito1.TabIndex = 142;
+            btncarrito1.Text = "Agregar al carrito";
+            btncarrito1.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btncarrito1.UseVisualStyleBackColor = false;
             // 
             // plato1
             // 
@@ -277,16 +277,16 @@
             plato1.Text = "Hamburguesa simple con queso $3000";
             plato1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox4
+            // imagen1
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(442, 48);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(241, 127);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 140;
-            pictureBox4.TabStop = false;
+            imagen1.Image = (Image)resources.GetObject("imagen1.Image");
+            imagen1.ImeMode = ImeMode.NoControl;
+            imagen1.Location = new Point(442, 48);
+            imagen1.Name = "imagen1";
+            imagen1.Size = new Size(241, 127);
+            imagen1.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagen1.TabIndex = 140;
+            imagen1.TabStop = false;
             // 
             // label7
             // 
@@ -301,40 +301,41 @@
             label7.TabIndex = 139;
             label7.Text = "Todas las hamburguesas incluyen papas";
             // 
-            // postre
+            // btnPostre
             // 
-            postre.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            postre.ImeMode = ImeMode.NoControl;
-            postre.Location = new Point(101, 357);
-            postre.Name = "postre";
-            postre.Size = new Size(247, 55);
-            postre.TabIndex = 138;
-            postre.Text = "Postres";
-            postre.UseVisualStyleBackColor = true;
+            btnPostre.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPostre.ImeMode = ImeMode.NoControl;
+            btnPostre.Location = new Point(101, 357);
+            btnPostre.Name = "btnPostre";
+            btnPostre.Size = new Size(247, 55);
+            btnPostre.TabIndex = 138;
+            btnPostre.Text = "Postres";
+            btnPostre.UseVisualStyleBackColor = true;
+            btnPostre.Click += postre_Click;
             // 
-            // bebidas
+            // btnBebida
             // 
-            bebidas.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            bebidas.ImeMode = ImeMode.NoControl;
-            bebidas.Location = new Point(100, 256);
-            bebidas.Name = "bebidas";
-            bebidas.Size = new Size(247, 55);
-            bebidas.TabIndex = 137;
-            bebidas.Text = "Bebidas";
-            bebidas.UseVisualStyleBackColor = true;
-            bebidas.Click += bebidas_Click;
+            btnBebida.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBebida.ImeMode = ImeMode.NoControl;
+            btnBebida.Location = new Point(100, 256);
+            btnBebida.Name = "btnBebida";
+            btnBebida.Size = new Size(247, 55);
+            btnBebida.TabIndex = 137;
+            btnBebida.Text = "Bebidas";
+            btnBebida.UseVisualStyleBackColor = true;
+            btnBebida.Click += bebidas_Click;
             // 
-            // burger
+            // btnBurger
             // 
-            burger.Font = new Font("Calibri", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            burger.ImeMode = ImeMode.NoControl;
-            burger.Location = new Point(100, 156);
-            burger.Name = "burger";
-            burger.Size = new Size(247, 55);
-            burger.TabIndex = 136;
-            burger.Text = "Hamburguesas";
-            burger.UseVisualStyleBackColor = true;
-            burger.Click += burger_Click;
+            btnBurger.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBurger.ImeMode = ImeMode.NoControl;
+            btnBurger.Location = new Point(100, 156);
+            btnBurger.Name = "btnBurger";
+            btnBurger.Size = new Size(247, 55);
+            btnBurger.TabIndex = 136;
+            btnBurger.Text = "Hamburguesas";
+            btnBurger.UseVisualStyleBackColor = true;
+            btnBurger.Click += burger_Click;
             // 
             // label6
             // 
@@ -355,65 +356,65 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 190, 40);
             ClientSize = new Size(1393, 585);
-            Controls.Add(button3);
+            Controls.Add(btncarrito6);
             Controls.Add(plato6);
-            Controls.Add(pictureBox1);
-            Controls.Add(button8);
+            Controls.Add(imagen6);
+            Controls.Add(btncarrito3);
             Controls.Add(plato3);
-            Controls.Add(pictureBox2);
-            Controls.Add(button6);
+            Controls.Add(imagen3);
+            Controls.Add(btncarrito5);
             Controls.Add(plato5);
-            Controls.Add(pictureBox5);
-            Controls.Add(button7);
+            Controls.Add(imagen5);
+            Controls.Add(btncarrito2);
             Controls.Add(plato2);
-            Controls.Add(pictureBox6);
-            Controls.Add(button4);
+            Controls.Add(imagen2);
+            Controls.Add(btncarrito4);
             Controls.Add(plato4);
-            Controls.Add(pictureBox3);
-            Controls.Add(button5);
+            Controls.Add(imagen4);
+            Controls.Add(btncarrito1);
             Controls.Add(plato1);
-            Controls.Add(pictureBox4);
+            Controls.Add(imagen1);
             Controls.Add(label7);
-            Controls.Add(postre);
-            Controls.Add(bebidas);
-            Controls.Add(burger);
+            Controls.Add(btnPostre);
+            Controls.Add(btnBebida);
+            Controls.Add(btnBurger);
             Controls.Add(label6);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Menu";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imagen6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imagen3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imagen5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imagen2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imagen4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imagen1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button3;
+        private Button btncarrito6;
         private Label plato6;
-        private PictureBox pictureBox1;
-        private Button button8;
+        private PictureBox imagen6;
+        private Button btncarrito3;
         private Label plato3;
-        private PictureBox pictureBox2;
-        private Button button6;
+        private PictureBox imagen3;
+        private Button btncarrito5;
         private Label plato5;
-        private PictureBox pictureBox5;
-        private Button button7;
+        private PictureBox imagen5;
+        private Button btncarrito2;
         private Label plato2;
-        private PictureBox pictureBox6;
-        private Button button4;
+        private PictureBox imagen2;
+        private Button btncarrito4;
         private Label plato4;
-        private PictureBox pictureBox3;
-        private Button button5;
+        private PictureBox imagen4;
+        private Button btncarrito1;
         private Label plato1;
-        private PictureBox pictureBox4;
+        private PictureBox imagen1;
         private Label label7;
-        private Button postre;
-        private Button bebidas;
-        private Button burger;
+        private Button btnPostre;
+        private Button btnBurger;
         private Label label6;
+        private Button btnBebida;
     }
 }
