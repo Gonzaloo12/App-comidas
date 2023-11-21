@@ -17,7 +17,6 @@ namespace CapaUI
     {
         private Label[] labelsPlatos;
         private PictureBox[] pictureImagenes;
-        private Carrito nuevoCarrito;
         private pantallaCarrito formCarrito;
 
 
@@ -172,75 +171,6 @@ namespace CapaUI
             }
         }
 
-
-
-        private void btncarrito1_Click(object sender, EventArgs e)
-        {
-            var nuevoProducto = plato1.Text;
-            nuevoCarrito.AgregarAlCarrito(nuevoProducto);
-
-        }
-
-
-        private void btn_carrito2_Click(object sender, EventArgs e)
-        {
-            var nuevoProducto = plato2.Text;
-            nuevoCarrito.AgregarAlCarrito(nuevoProducto);
-        }
-
-        private void btn_carrito3_Click(object sender, EventArgs e)
-        {
-            var nuevoProducto = plato3.Text;
-            nuevoCarrito.AgregarAlCarrito(nuevoProducto);
-        }
-
-        private void btn_carrito4_Click(object sender, EventArgs e)
-        {
-            var nuevoProducto = plato4.Text;
-            nuevoCarrito.AgregarAlCarrito(nuevoProducto);
-        }
-
-        private void btn_carrito5_Click(object sender, EventArgs e)
-        {
-            var nuevoProducto = plato5.Text;
-            nuevoCarrito.AgregarAlCarrito(nuevoProducto);
-        }
-
-        private void btn_carrito6_Click(object sender, EventArgs e)
-        {
-            var nuevoProducto = plato6.Text;
-            nuevoCarrito.AgregarAlCarrito(nuevoProducto);
-        }
-
-        private void ActualizarCarrito()
-        {
-
-            if (nuevoCarrito == null)
-            {
-                nuevoCarrito = new Carrito();
-            }
-
-            // Crear una instancia del formulario de Carrito
-            //pantallaCarrito nuevoFormulario = new pantallaCarrito();
-
-            // Obtener los productos del carrito
-            List<string> productosEnCarrito = nuevoCarrito.GetCarrito();
-
-
-            // Actualizar el ListBox en el formulario de Carrito
-            foreach (var producto in productosEnCarrito)
-            {
-                formCarrito.listBox1.Items.Add(producto);
-            }
-
-
-            // Mostrar el formulario de Carrito
-            if (!formCarrito.Visible)
-            {
-                formCarrito.Show();
-
-            }
-        }
     }
 
 
