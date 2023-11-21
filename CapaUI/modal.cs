@@ -47,7 +47,7 @@ namespace TP_FINAL
                
                 if (iniciarSesionButton != null)
                 {
-                    iniciarSesionButton.Hide();
+                    iniciarSesionButton.Text = "Ver Menú";
                 }
 
 
