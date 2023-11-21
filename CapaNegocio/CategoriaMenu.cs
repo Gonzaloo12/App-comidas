@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
+    //CAMBIO DE CATEGORÍAS
     public abstract class Menu
     {
         protected string nombre;
@@ -23,7 +24,6 @@ namespace CapaNegocio
             this.imagen = imagen;
         }
 
-
         public abstract List<string> GetProducto();
         public abstract List<string> GetPicture();
 
@@ -38,13 +38,9 @@ namespace CapaNegocio
         public Bebida(string n, string precio) : base(n, precio)
         {
 
-
-
         }
         public Bebida(string imagen) : base(imagen)
         {
-
-
 
         }
 
@@ -53,24 +49,24 @@ namespace CapaNegocio
             listaBebidas = new List<string>();
 
             var coca = new Bebida("Cocal cola 500ml", "$1200");
-            listaBebidas.Add(coca.nombre);
+            listaBebidas.Add(coca.nombre + " " + coca.precio);
 
             var fanta = new Bebida("Fanta 500ml", "$1200");
-            listaBebidas.Add(fanta.nombre);
+            listaBebidas.Add(fanta.nombre + " " + fanta.precio);
 
             var toros = new Bebida("Paso de los Toros 500ml", "$1200");
-            listaBebidas.Add(toros.nombre);
+            listaBebidas.Add(toros.nombre + " " + toros.precio);
 
 
             var sprite = new Bebida("Sprite 500ml", "$1200");
-            listaBebidas.Add(sprite.nombre);
+            listaBebidas.Add(sprite.nombre + " " + sprite.precio);
 
 
             var agua = new Bebida("Agua 500ml", "$1000");
-            listaBebidas.Add(agua.nombre);
+            listaBebidas.Add(agua.nombre + " " + agua.precio);
 
             var cerveza = new Bebida("Brahma 473ml", "$1500");
-            listaBebidas.Add(cerveza.nombre);            
+            listaBebidas.Add(cerveza.nombre + " " + cerveza.precio);            
 
 
             return listaBebidas;
@@ -232,5 +228,21 @@ namespace CapaNegocio
             return listaImagenes;
         }
     }
-  
+
+    //VALIDACION DE USUARIO
+    public class Usuario
+    {
+        public bool ValidarUsuario(string usuario, string contrasenia)
+        {
+            if (usuario == "UsuarioTp" && contrasenia == "ContraseñaTp")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
+        }
+    }
 }

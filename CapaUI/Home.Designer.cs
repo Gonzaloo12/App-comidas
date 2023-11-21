@@ -32,7 +32,7 @@ namespace TP_FINAL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             AboutUs = new Button();
             Menu = new Button();
-            button1 = new Button();
+            MiCarrito = new Button();
             btnHome = new Button();
             menu_cate = new Panel();
             iniciarSesion = new Button();
@@ -75,25 +75,26 @@ namespace TP_FINAL
             Menu.UseVisualStyleBackColor = false;
             Menu.Click += Menu_Click;
             // 
-            // button1
+            // MiCarrito
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderColor = Color.Black;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.Black;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.Transparent;
-            button1.Location = new Point(478, 28);
-            button1.Name = "button1";
-            button1.Padding = new Padding(3, 0, 0, 0);
-            button1.Size = new Size(120, 50);
-            button1.TabIndex = 8;
-            button1.TabStop = false;
-            button1.Text = "Mi carrito";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button1.UseVisualStyleBackColor = false;
+            MiCarrito.BackColor = Color.Transparent;
+            MiCarrito.FlatAppearance.BorderColor = Color.Black;
+            MiCarrito.FlatAppearance.BorderSize = 0;
+            MiCarrito.FlatAppearance.MouseDownBackColor = Color.Black;
+            MiCarrito.FlatStyle = FlatStyle.Flat;
+            MiCarrito.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            MiCarrito.ForeColor = Color.Transparent;
+            MiCarrito.Location = new Point(478, 28);
+            MiCarrito.Name = "MiCarrito";
+            MiCarrito.Padding = new Padding(3, 0, 0, 0);
+            MiCarrito.Size = new Size(120, 50);
+            MiCarrito.TabIndex = 8;
+            MiCarrito.TabStop = false;
+            MiCarrito.Text = "Mi carrito";
+            MiCarrito.TextAlign = ContentAlignment.MiddleLeft;
+            MiCarrito.TextImageRelation = TextImageRelation.TextBeforeImage;
+            MiCarrito.UseVisualStyleBackColor = false;
+            MiCarrito.Click += formCarrito_Click;
             // 
             // btnHome
             // 
@@ -117,7 +118,7 @@ namespace TP_FINAL
             // 
             menu_cate.BackColor = Color.Transparent;
             menu_cate.Controls.Add(iniciarSesion);
-            menu_cate.Location = new Point(1, 97);
+            menu_cate.Location = new Point(0, 105);
             menu_cate.Name = "menu_cate";
             menu_cate.Size = new Size(1393, 585);
             menu_cate.TabIndex = 39;
@@ -128,7 +129,7 @@ namespace TP_FINAL
             iniciarSesion.FlatStyle = FlatStyle.Flat;
             iniciarSesion.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             iniciarSesion.ForeColor = Color.White;
-            iniciarSesion.Location = new Point(180, 361);
+            iniciarSesion.Location = new Point(163, 368);
             iniciarSesion.Name = "iniciarSesion";
             iniciarSesion.Size = new Size(202, 63);
             iniciarSesion.TabIndex = 15;
@@ -145,7 +146,7 @@ namespace TP_FINAL
             ClientSize = new Size(1394, 683);
             Controls.Add(menu_cate);
             Controls.Add(btnHome);
-            Controls.Add(button1);
+            Controls.Add(MiCarrito);
             Controls.Add(Menu);
             Controls.Add(AboutUs);
             Name = "Home";
@@ -157,10 +158,10 @@ namespace TP_FINAL
         private System.Windows.Forms.Button home;
         private System.Windows.Forms.Button AboutUs;
         private System.Windows.Forms.Button Menu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button MiCarrito;
         private Button btnHome;
-        private Button iniciarSesion;
-        private Panel menu_cate;
+        public Panel menu_cate;
+        internal Button iniciarSesion;
     }
 }
 

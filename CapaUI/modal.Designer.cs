@@ -62,7 +62,6 @@ namespace TP_FINAL
             correoElect.TabIndex = 3;
             correoElect.Text = "Correo Electrónico";
             correoElect.TextAlign = ContentAlignment.TopCenter;
-            correoElect.Click += correoElect_Click;
             // 
             // contrasenia
             // 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaUI", "CapaUI\CapaUI.csproj", "{8B4EDD9D-1DAB-45CA-8D71-CEA60E2426A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapaUI", "CapaUI\CapaUI.csproj", "{8B4EDD9D-1DAB-45CA-8D71-CEA60E2426A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{A8C7AFD5-9BC8-4BCE-A97A-6F0392F7C708}"
 EndProject
