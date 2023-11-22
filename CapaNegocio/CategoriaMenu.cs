@@ -3,230 +3,247 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CapaNegocio
 {
     //CAMBIO DE CATEGORÍAS
-    public abstract class Menu
+    public abstract class Comida
     {
         protected string nombre;
-        protected string precio;
+        protected double precio;
         protected string imagen;
-        public Menu(string nombre, string precio)
+        public Comida(string nombre, double precio, string imagen)
         {
             this.nombre = nombre;
+            this.precio = precio;
+            this.imagen = imagen;   
+
+        }
+        public abstract string GetProducto();
+        public abstract string GetPicture();
+        public abstract double GetPrecio();
+
+    }
+
+    public class Bebida : Comida
+    {
+        public Bebida(string n, double precio, string imagen) : base(n, precio, imagen)
+        {
+
+        }
+
+        public override string GetProducto()
+        {
+            return nombre;
+        }
+
+        public override double GetPrecio()
+        {
+            return precio;
+        }
+
+        public override string GetPicture()
+        {
+            return imagen;
+        }
+
+       
+    }
+
+    public class Burger : Comida
+    {
+        public Burger(string n, double precio, string imagen) : base(n, precio, imagen)
+        {
+
+        }
+
+        public override string GetProducto()
+        {
+            return nombre;
+        }
+
+        public override double GetPrecio()
+        {
+            return precio;
+        }
+
+        public override string GetPicture()
+        {
+            return imagen;
+        }
+    
+    }
+
+    public class Postre : Comida
+    {
+        public Postre(string n, double precio, string imagen) : base(n, precio, imagen)
+        {
+
+        }
+
+        public override string GetProducto()
+        {
+            return nombre;
+        }
+
+        public override double GetPrecio()
+        {
+            return precio;
+        }
+
+        public override string GetPicture()
+        {
+            return imagen;
+        }
+
+    }
+
+    public class MenuComida
+    {
+        protected List<Bebida> ListaBebidas = new List<Bebida>();
+        protected List<Burger> ListaBurger = new List<Burger>();
+        protected List<Postre> ListaPostre = new List<Postre>();
+
+        public List<Bebida> GetListaBebida()
+        {
+            return ListaBebidas;
+        }
+
+        public List<Burger> GetListaBurger()
+        {
+            return ListaBurger;
+        }
+
+        public List<Postre> GetListaPostre()
+        {
+            return ListaPostre;
+        }
+        public MenuComida()
+        {
+
+            //LISTA BEBIDA/////////////////////
+
+            var coca = new Bebida("Cocal cola 500ml", 1200, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\cocacola.jpg");
+
+            ListaBebidas.Add(coca);
+
+            var fanta = new Bebida("Fanta 500ml", 1200, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\fanta.png");
+            ListaBebidas.Add(fanta);
+
+            var toros = new Bebida("Paso de los Toros 500ml", 1200, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\paso de los toros.jpg");
+            ListaBebidas.Add(toros);
+
+
+            var sprite = new Bebida("Sprite 500ml", 1200, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\sprite.jpeg");
+            ListaBebidas.Add(sprite);
+
+
+            var agua = new Bebida("Agua 500ml", 1000, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\agua.jpg");
+            ListaBebidas.Add(agua);
+
+            var cerveza = new Bebida("Brahma 473ml", 1500, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\brahma.jpg");
+            ListaBebidas.Add(cerveza);
+
+
+            //LISTA BURGER//////////////////
+
+            var opcion1 = new Burger("Hamburguesa simple con queso", 3300, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
+            ListaBurger.Add(opcion1);
+
+            var opcion2 = new Burger("Hamburguesa lechuga y tomate", 3500, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
+            ListaBurger.Add(opcion2);
+
+            var opcion3 = new Burger("Hamburguesa doble carne panceta y queso", 4000, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
+            ListaBurger.Add(opcion3);
+
+            var opcion4 = new Burger("Hamburguesa doble carne jamon, queso y huevo", 4300, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
+            ListaBurger.Add(opcion4);
+
+            var opcion5 = new Burger("Hamburguesa vegana NotCarne", 3500, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
+            ListaBurger.Add(opcion5);
+
+            var opcion6 = new Burger("Hamburguesa vegana doble NotCarne", 4000, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
+            ListaBurger.Add(opcion6);
+
+
+            //LISTA POSTRE//////////////////
+
+            var postre1 = new Postre("Cono de DDL", 500, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\ddl.jpg");
+            ListaPostre.Add(postre1);
+
+            var postre2 = new Postre("Cono de limon", 500, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\limon.jpg");
+            ListaPostre.Add(postre2);
+
+            var postre3 = new Postre("Cono de chocolate", 500, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\chocolate.jpg");
+            ListaPostre.Add(postre3);
+
+            var postre4 = new Postre("Cono de frutilla", 500, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\frutilla.jpg");
+            ListaPostre.Add(postre4);
+
+            var postre5 = new Postre("Alfajor vegano", 500, "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\alfajorvegano.jpg");
+            ListaPostre.Add(postre5);
+            
+        }
+
+    }
+
+    public class itemCarrito
+    {
+        decimal total;
+        decimal cantidad;
+        decimal precio;
+
+        public itemCarrito(decimal cantidad, decimal precio)
+        {
+
+            this.cantidad = cantidad;
             this.precio = precio;
 
         }
 
-        public Menu( string imagen)
+        public decimal getTotal()
         {
-            this.imagen = imagen;
-        }
-
-        public abstract List<string> GetProducto();
-        public abstract List<string> GetPicture();
-
-    }
-
-    public class Bebida : Menu
-    {
-
-        private List<string> listaBebidas;
-        private List<string> listaImagenes;
-
-        public Bebida(string n, string precio) : base(n, precio)
-        {
-
-        }
-        public Bebida(string imagen) : base(imagen)
-        {
-
-        }
-
-        public override List<string> GetProducto()
-        {
-            listaBebidas = new List<string>();
-
-            var coca = new Bebida("Cocal cola 500ml", "$1200");
-            listaBebidas.Add(coca.nombre + " " + coca.precio);
-
-            var fanta = new Bebida("Fanta 500ml", "$1200");
-            listaBebidas.Add(fanta.nombre + " " + fanta.precio);
-
-            var toros = new Bebida("Paso de los Toros 500ml", "$1200");
-            listaBebidas.Add(toros.nombre + " " + toros.precio);
-
-
-            var sprite = new Bebida("Sprite 500ml", "$1200");
-            listaBebidas.Add(sprite.nombre + " " + sprite.precio);
-
-
-            var agua = new Bebida("Agua 500ml", "$1000");
-            listaBebidas.Add(agua.nombre + " " + agua.precio);
-
-            var cerveza = new Bebida("Brahma 473ml", "$1500");
-            listaBebidas.Add(cerveza.nombre + " " + cerveza.precio);            
-
-
-            return listaBebidas;
-        }
-
-        public override List<string> GetPicture()
-        {
-            listaImagenes = new List<string>();
-
-            var coca = new Bebida("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\cocacola.jpg");
-            listaImagenes.Add(coca.imagen);
-
-            var fanta = new Bebida("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\fanta.png");
-            listaImagenes.Add(fanta.imagen);
-
-            var toros = new Bebida("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\paso de los toros.jpg");
-            listaImagenes.Add(toros.imagen);
-
-            var sprite = new Bebida("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\sprite.jpeg");
-
-            listaImagenes.Add(sprite.imagen);
-
-            var agua = new Bebida("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\agua.jpg");
-
-            listaImagenes.Add(agua.imagen);
-
-            var cerveza = new Bebida("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\bebidas\\brahma.jpg");
-            listaImagenes.Add(cerveza.imagen);
-
-            return listaImagenes;
+            total = 0;
+            total = (precio * cantidad);
+            return total;
         }
     }
-
-    public class Burger : Menu
+    public class Carrito
     {
-
-        private List<string> listaBurger;
-        private List<string> listaImagenes;
-
-        public Burger(string n, string precio) : base(n, precio)
+        decimal totalCarrito;
+        List<itemCarrito> ListaPedido;
+        
+        public Carrito()
         {
-
+            ListaPedido = new List<itemCarrito> ();
+            
         }
 
-        public Burger(string imagen) : base(imagen)
+        public void agregarAlCarrito(itemCarrito pedido)
         {
-
-        }
-        public override List<string> GetProducto()
-        {
-            listaBurger = new List<string>();
-
-
-            var opcion1 = new Burger("Hamburguesa simple con queso", "$3300");
-            listaBurger.Add(opcion1.nombre + " " + opcion1.precio);
-
-            var opcion2 = new Burger("Hamburguesa lechuga y tomate", "$3500");
-            listaBurger.Add(opcion2.nombre + " " + opcion2.precio);
-
-            var opcion3 = new Burger("Hamburguesa doble carne panceta y queso", "$4000");
-            listaBurger.Add(opcion3.nombre + " " + opcion3.precio);
-
-            var opcion4 = new Burger("Hamburguesa doble carne jamon, queso y huevo", "$4300");
-            listaBurger.Add(opcion4.nombre + " " + opcion4.precio);
-
-            var opcion5 = new Burger("Hamburguesa vegana NotCarne", "$3500");
-            listaBurger.Add(opcion5.nombre + " " + opcion5.precio);
-
-            var opcion6 = new Burger("Hamburguesa vegana doble NotCarne", "$4000");
-            listaBurger.Add(opcion6.nombre + " " + opcion6.precio);
-
-            return listaBurger;
+            ListaPedido.Add (pedido);
         }
 
-        public override List<string> GetPicture()
+        public decimal getTotalCarrito()
         {
-            listaImagenes = new List<string>();
+            totalCarrito = 0;
 
-            var opcion1 = new Burger("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
-            listaImagenes.Add(opcion1.imagen);
+            foreach (var item in ListaPedido)
+            {
+                totalCarrito += item.getTotal();
+            }
 
-            var opcion2 = new Burger("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
-            listaImagenes.Add(opcion2.imagen);
-
-            var opcion3 = new Burger("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
-            listaImagenes.Add(opcion3.imagen);
-
-            var opcion4 = new Burger("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
-
-            listaImagenes.Add(opcion4.imagen);
-
-            var opcion5 = new Burger("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
-
-            listaImagenes.Add(opcion5.imagen);
-
-            var opcion6 = new Burger("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\hamburguesas\\sabrosa-hamburguesa-aislada-sobre-fondo-blanco-comida-rapida-hamburguesa-fresca-carne-queso.jpg");
-            listaImagenes.Add(opcion6.imagen);
-
-            return listaImagenes;
-        }
-    }
-
-    public class Postre : Menu
-    {
-
-        private List<string> listaPostre;
-        private List<string> listaImagenes;
-
-        public Postre(string n, string precio) : base(n, precio)
-        {
-
+            return totalCarrito;
         }
 
-        public Postre(string imagen) : base(imagen)
+        public decimal borrarTodo()
         {
-
-        }
-        public override List<string> GetProducto()
-        {
-            listaPostre = new List<string>();
-
-
-            var opcion1 = new Postre("Cono de DDL", "500");
-            listaPostre.Add(opcion1.nombre + " " + opcion1.precio);
-
-            var opcion2 = new Postre("Cono de limon", "$500");
-            listaPostre.Add(opcion2.nombre + " " + opcion2.precio);
-
-            var opcion3 = new Postre("Cono de chocolate", "$500");
-            listaPostre.Add(opcion3.nombre + " " + opcion3.precio);
-                
-            var opcion4 = new Postre("Cono de frutilla", "$500");
-            listaPostre.Add(opcion4.nombre + " " + opcion4.precio);
-
-            var opcion5 = new Postre("Alfajor vegano", "$500");
-            listaPostre.Add(opcion5.nombre + " " + opcion5.precio);
-            return listaPostre;
+            ListaPedido.Clear();
+            return totalCarrito = 0;
+            
         }
 
-        public override List<string> GetPicture()
-        {
-            listaImagenes = new List<string>();
-
-            var opcion1 = new Postre("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\ddl.jpg");
-            listaImagenes.Add(opcion1.imagen);
-
-            var opcion2 = new Postre("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\limon.jpg");
-            listaImagenes.Add(opcion2.imagen);
-
-            var opcion3 = new Postre("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\chocolate.jpg");
-            listaImagenes.Add(opcion3.imagen);
-
-            var opcion4 = new Postre("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\frutilla.jpg");
-            listaImagenes.Add(opcion4.imagen);
-
-            var opcion5 = new Postre("D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR\\TPCAPAS\\CapaNegocio\\postre\\alfajorvegano.jpg");
-            listaImagenes.Add(opcion5.imagen);
-
-            return listaImagenes;
-        }
     }
 
     //VALIDACION DE USUARIO
@@ -245,4 +262,8 @@ namespace CapaNegocio
             }
         }
     }
+
+
+
+    
 }

@@ -42,7 +42,7 @@ namespace TP_FINAL
 
         private void iniciarSesion_Click(object sender, EventArgs e)
         {
-            if (iniciarSesion.Text== "Iniciar Sesión")
+            if (iniciarSesion.Text == "Iniciar Sesión")
             {
                 var modalSesion = new modal(iniciarSesion);
 
@@ -72,7 +72,7 @@ namespace TP_FINAL
         {
 
             menu_cate.Controls.Clear();
-    
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -82,17 +82,8 @@ namespace TP_FINAL
 
         private void formCarrito_Click(object sender, EventArgs e)
         {
-            var pantallaCarrito = new pantallaCarrito();
-            pantallaCarrito.TopLevel = false;
-            pantallaCarrito.FormBorderStyle = FormBorderStyle.None;
-            pantallaCarrito.Dock = DockStyle.Fill;
-            menu_cate.Controls.Clear();
-            menu_cate.Controls.Add(pantallaCarrito);
-            this.iniciarSesion.Hide();
-            pantallaCarrito.Show();
+
 
         }
-
-
     }
 }

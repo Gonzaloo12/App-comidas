@@ -9,24 +9,24 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CapaUI
 {
     public partial class Categoria : Form
     {
-        private Label[] labelsPlatos;
+        private Label[] labelsPlatos, labelsPrecios;
         private PictureBox[] pictureImagenes;
-        private pantallaCarrito formCarrito;
-
+        private Carrito nuevaListaPedido;
 
         public Categoria()
         {
             InitializeComponent();
             labelsPlatos = new Label[] { plato1, plato2, plato3, plato4, plato5, plato6 };
+            labelsPrecios = new Label[] { precio1, precio2, precio3, precio4, precio5, precio6 };
             pictureImagenes = new PictureBox[] { imagen1, imagen2, imagen3, imagen4, imagen5, imagen6 };
-            formCarrito = new pantallaCarrito();
-
+            nuevaListaPedido = new Carrito();
 
             Font btnSeleccionado = new Font(btnBurger.Font, FontStyle.Bold | FontStyle.Underline);
             btnBurger.Font = btnSeleccionado;
@@ -37,27 +37,25 @@ namespace CapaUI
             Font btnDeseleccionado1 = new Font(btnPostre.Font, FontStyle.Regular | FontStyle.Regular);
             btnPostre.Font = btnDeseleccionado1;
 
-            var burger = new Burger("burger", "precio");
-            var burgerImagen = new Burger("imagen");
+            var burger = new MenuComida();
+
             var i = 0;
 
 
             this.imagen6.Show();
             this.plato6.Show();
-            this.btncarrito6.Show();
+            this.checkBox6.Show();
+            this.cantidad6.Show();
+            this.precio6.Show();
 
-            foreach (var burgerNombre in burger.GetProducto())
+            foreach (var burgerNombre in burger.GetListaBurger())
             {
-                labelsPlatos[i].Text = burgerNombre;
-                i++;
-            }
 
-            i = 0;
-
-            foreach (var imagen in burgerImagen.GetPicture())
-            {
-                pictureImagenes[i].Image = Image.FromFile(imagen);
+                labelsPlatos[i].Text = burgerNombre.GetProducto();
+                labelsPrecios[i].Text = (burgerNombre.GetPrecio()).ToString();
+                pictureImagenes[i].Image = System.Drawing.Image.FromFile(burgerNombre.GetPicture());
                 i++;
+
             }
 
         }
@@ -74,27 +72,24 @@ namespace CapaUI
             Font btnDeseleccionado1 = new Font(btnPostre.Font, FontStyle.Regular | FontStyle.Regular);
             btnPostre.Font = btnDeseleccionado1;
 
-            var bebida = new Bebida("bebida", "precio");
-            var bebidaImagen = new Bebida("imagen");
+            var bebida = new MenuComida();
+
             var i = 0;
 
             this.imagen6.Show();
             this.plato6.Show();
-            this.btncarrito6.Show();
+            this.checkBox6.Show();
+            this.cantidad6.Show();
+            this.precio6.Show();
 
-            foreach (var bebidaNombre in bebida.GetProducto())
+            foreach (var bebidaNombre in bebida.GetListaBebida())
             {
-                labelsPlatos[i].Text = bebidaNombre;
+                labelsPlatos[i].Text = bebidaNombre.GetProducto();
+                labelsPrecios[i].Text = (bebidaNombre.GetPrecio()).ToString();
+                pictureImagenes[i].Image = System.Drawing.Image.FromFile(bebidaNombre.GetPicture());
                 i++;
             }
 
-            i = 0;
-
-            foreach (var imagen in bebidaImagen.GetPicture())
-            {
-                pictureImagenes[i].Image = Image.FromFile(imagen);
-                i++;
-            }
         }
 
         //CLIC BURGER
@@ -110,27 +105,24 @@ namespace CapaUI
             Font btnDeseleccionado1 = new Font(btnPostre.Font, FontStyle.Regular | FontStyle.Regular);
             btnPostre.Font = btnDeseleccionado1;
 
-            var burger = new Burger("burger", "precio");
-            var burgerImagen = new Burger("imagen");
+            var burger = new MenuComida();
+
             var i = 0;
 
 
             this.imagen6.Show();
             this.plato6.Show();
-            this.btncarrito6.Show();
+            this.checkBox6.Show();
+            this.cantidad6.Show();
+            this.precio6.Show();
 
-            foreach (var burgerNombre in burger.GetProducto())
+            foreach (var burgerNombre in burger.GetListaBurger())
             {
-                labelsPlatos[i].Text = burgerNombre;
+                labelsPlatos[i].Text = burgerNombre.GetProducto();
+                labelsPrecios[i].Text = (burgerNombre.GetPrecio()).ToString();
+                pictureImagenes[i].Image = System.Drawing.Image.FromFile(burgerNombre.GetPicture());
                 i++;
-            }
 
-            i = 0;
-
-            foreach (var imagen in burgerImagen.GetPicture())
-            {
-                pictureImagenes[i].Image = Image.FromFile(imagen);
-                i++;
             }
         }
 
@@ -146,33 +138,118 @@ namespace CapaUI
             Font btnDeseleccionado1 = new Font(btnBebida.Font, FontStyle.Regular | FontStyle.Regular);
             btnBebida.Font = btnDeseleccionado1;
 
-            Console.WriteLine("funciona");
+            var postre = new MenuComida();
 
-            var postre = new Postre("postre", "precio");
-            var postreImagen = new Postre("imagen");
             var i = 0;
 
             this.imagen6.Hide();
             this.plato6.Hide();
-            this.btncarrito6.Hide();
+            this.checkBox6.Hide();
+            this.cantidad6.Hide();
+            this.precio6.Hide();
 
-            foreach (var postreNombre in postre.GetProducto())
+            foreach (var postreNombre in postre.GetListaPostre())
             {
-                labelsPlatos[i].Text = postreNombre;
+                labelsPlatos[i].Text = postreNombre.GetProducto();
+                labelsPrecios[i].Text = (postreNombre.GetPrecio()).ToString();
+                pictureImagenes[i].Image = System.Drawing.Image.FromFile(postreNombre.GetPicture());
                 i++;
-            }
 
-            i = 0;
-
-            foreach (var imagen in postreImagen.GetPicture())
-            {
-                pictureImagenes[i].Image = Image.FromFile(imagen);
-                i++;
             }
         }
 
+        ///CARRITO//
+
+        public void ActualizarListBox(decimal cantidad, string plato)
+        {
+            for (int i = 0; i < cantidad; i++)
+            {
+                listaPed.Items.Add(plato);
+            }
+        }
+        public void actualizarCarrito()
+        {
+            var total = nuevaListaPedido.getTotalCarrito();
+            totalnumero.Text = total.ToString();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            itemCarrito nuevoItem = new itemCarrito(cantidad1.Value, decimal.Parse(precio1.Text));
+            nuevaListaPedido.agregarAlCarrito(nuevoItem);
+            ActualizarListBox(cantidad1.Value, plato1.Text);
+            actualizarCarrito();
+
+        }
+
+
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+            itemCarrito nuevoItem = new itemCarrito(cantidad2.Value, decimal.Parse(precio2.Text));
+            nuevaListaPedido.agregarAlCarrito(nuevoItem);
+            ActualizarListBox(cantidad2.Value, plato2.Text);
+
+            actualizarCarrito();
+
+        }
+
+
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+            itemCarrito nuevoItem = new itemCarrito(cantidad3.Value, decimal.Parse(precio3.Text));
+            nuevaListaPedido.agregarAlCarrito(nuevoItem);
+            ActualizarListBox(cantidad3.Value, plato3.Text);
+
+            actualizarCarrito();
+
+        }
+
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+            itemCarrito nuevoItem = new itemCarrito(cantidad4.Value, decimal.Parse(precio4.Text));
+            nuevaListaPedido.agregarAlCarrito(nuevoItem);
+            ActualizarListBox(cantidad4.Value, plato4.Text);
+
+            actualizarCarrito();
+
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+
+            itemCarrito nuevoItem = new itemCarrito(cantidad5.Value, decimal.Parse(precio5.Text));
+            nuevaListaPedido.agregarAlCarrito(nuevoItem);
+            ActualizarListBox(cantidad5.Value, plato5.Text);
+
+            actualizarCarrito();
+
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+
+            itemCarrito nuevoItem = new itemCarrito(cantidad6.Value, decimal.Parse(precio6.Text));
+            nuevaListaPedido.agregarAlCarrito(nuevoItem);
+            ActualizarListBox(cantidad6.Value, plato6.Text);
+
+            actualizarCarrito();
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            totalnumero.Text = nuevaListaPedido.borrarTodo().ToString();
+            listaPed.Items.Clear();
+
+        }
+
+
     }
-
-
 }
-
