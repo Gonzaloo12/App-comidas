@@ -68,7 +68,6 @@
             precio4 = new Label();
             precio5 = new Label();
             precio6 = new Label();
-            listaPed = new ListBox();
             hacerPedido = new Button();
             listBox1 = new ListBox();
             listaMedios = new ComboBox();
@@ -79,6 +78,9 @@
             label4 = new Label();
             label5 = new Label();
             label8 = new Label();
+            dataGridView1 = new DataGridView();
+            Cantidad = new DataGridViewTextBoxColumn();
+            Detalle = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)imagen1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imagen4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imagen2).BeginInit();
@@ -91,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)cantidad4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cantidad5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cantidad6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label7
@@ -441,12 +444,12 @@
             carrito.BackColor = Color.White;
             carrito.Font = new Font("Calibri", 18F, FontStyle.Bold, GraphicsUnit.Point);
             carrito.ImageAlign = ContentAlignment.MiddleLeft;
-            carrito.Location = new Point(1084, 0);
+            carrito.Location = new Point(1052, 0);
             carrito.Name = "carrito";
             carrito.Padding = new Padding(0, 10, 0, 0);
-            carrito.Size = new Size(309, 586);
+            carrito.Size = new Size(341, 586);
             carrito.TabIndex = 169;
-            carrito.Text = "Mi carrito";
+            carrito.Text = "Mi Carrito";
             carrito.TextAlign = ContentAlignment.TopCenter;
             // 
             // labelTotal
@@ -454,7 +457,7 @@
             labelTotal.AutoSize = true;
             labelTotal.BackColor = Color.White;
             labelTotal.Font = new Font("Calibri", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTotal.Location = new Point(1110, 406);
+            labelTotal.Location = new Point(1080, 406);
             labelTotal.Name = "labelTotal";
             labelTotal.Size = new Size(99, 37);
             labelTotal.TabIndex = 170;
@@ -465,7 +468,7 @@
             btnLimpiar.BackColor = Color.FromArgb(255, 138, 0);
             btnLimpiar.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(1110, 518);
+            btnLimpiar.Location = new Point(1080, 517);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(94, 42);
             btnLimpiar.TabIndex = 171;
@@ -544,28 +547,19 @@
             precio6.TabIndex = 178;
             precio6.Text = "precio";
             // 
-            // listaPed
-            // 
-            listaPed.Font = new Font("Calibri", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            listaPed.FormattingEnabled = true;
-            listaPed.ItemHeight = 22;
-            listaPed.Location = new Point(1110, 69);
-            listaPed.MultiColumn = true;
-            listaPed.Name = "listaPed";
-            listaPed.Size = new Size(256, 312);
-            listaPed.TabIndex = 179;
-            // 
             // hacerPedido
             // 
+            hacerPedido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             hacerPedido.BackColor = Color.FromArgb(255, 138, 0);
             hacerPedido.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             hacerPedido.ForeColor = Color.White;
-            hacerPedido.Location = new Point(1249, 518);
+            hacerPedido.Location = new Point(1241, 515);
             hacerPedido.Name = "hacerPedido";
-            hacerPedido.Size = new Size(117, 42);
+            hacerPedido.Size = new Size(123, 42);
             hacerPedido.TabIndex = 180;
             hacerPedido.Text = "Hacer Pedido";
             hacerPedido.UseVisualStyleBackColor = false;
+            hacerPedido.Click += hacerPedido_Click;
             // 
             // listBox1
             // 
@@ -582,9 +576,9 @@
             listaMedios.Font = new Font("Calibri", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             listaMedios.FormattingEnabled = true;
             listaMedios.Items.AddRange(new object[] { "Efectivo", "Tarjeta de Débito", "Tarjeta de Crédito", "Mercado Pago" });
-            listaMedios.Location = new Point(1249, 458);
+            listaMedios.Location = new Point(1241, 458);
             listaMedios.Name = "listaMedios";
-            listaMedios.Size = new Size(117, 29);
+            listaMedios.Size = new Size(125, 29);
             listaMedios.TabIndex = 182;
             // 
             // labelMedio
@@ -592,7 +586,7 @@
             labelMedio.AutoSize = true;
             labelMedio.BackColor = Color.White;
             labelMedio.Font = new Font("Calibri", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMedio.Location = new Point(1110, 462);
+            labelMedio.Location = new Point(1080, 460);
             labelMedio.Name = "labelMedio";
             labelMedio.Size = new Size(131, 22);
             labelMedio.TabIndex = 183;
@@ -658,12 +652,43 @@
             label8.TabIndex = 189;
             label8.Text = "$";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Cantidad, Detalle });
+            dataGridView1.GridColor = Color.White;
+            dataGridView1.Location = new Point(1080, 81);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(286, 305);
+            dataGridView1.TabIndex = 190;
+            // 
+            // Cantidad
+            // 
+            Cantidad.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.MinimumWidth = 6;
+            Cantidad.Name = "Cantidad";
+            Cantidad.Width = 70;
+            // 
+            // Detalle
+            // 
+            Detalle.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Detalle.HeaderText = "Detalle";
+            Detalle.MinimumWidth = 6;
+            Detalle.Name = "Detalle";
+            Detalle.Width = 215;
+            // 
             // Categoria
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 190, 40);
             ClientSize = new Size(1393, 585);
+            Controls.Add(dataGridView1);
             Controls.Add(label8);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -674,7 +699,6 @@
             Controls.Add(listaMedios);
             Controls.Add(listBox1);
             Controls.Add(hacerPedido);
-            Controls.Add(listaPed);
             Controls.Add(precio6);
             Controls.Add(precio5);
             Controls.Add(precio4);
@@ -684,7 +708,6 @@
             Controls.Add(totalnumero);
             Controls.Add(btnLimpiar);
             Controls.Add(labelTotal);
-            Controls.Add(carrito);
             Controls.Add(cantidad6);
             Controls.Add(checkBox6);
             Controls.Add(cantidad5);
@@ -714,6 +737,7 @@
             Controls.Add(btnBebida);
             Controls.Add(btnBurger);
             Controls.Add(label6);
+            Controls.Add(carrito);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Categoria";
             ((System.ComponentModel.ISupportInitialize)imagen1).EndInit();
@@ -728,6 +752,7 @@
             ((System.ComponentModel.ISupportInitialize)cantidad4).EndInit();
             ((System.ComponentModel.ISupportInitialize)cantidad5).EndInit();
             ((System.ComponentModel.ISupportInitialize)cantidad6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -772,7 +797,6 @@
         private Label precio4;
         private Label precio5;
         private Label precio6;
-        private ListBox listaPed;
         private Button hacerPedido;
         private ListBox listBox1;
         private ComboBox listaMedios;
@@ -783,5 +807,8 @@
         private Label label4;
         private Label label5;
         private Label label8;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Cantidad;
+        private DataGridViewTextBoxColumn Detalle;
     }
 }

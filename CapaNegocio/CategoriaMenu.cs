@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using static iTextSharp.text.pdf.AcroFields;
 
 namespace CapaNegocio
 {
@@ -193,15 +197,30 @@ namespace CapaNegocio
         decimal total;
         decimal cantidad;
         decimal precio;
+        string detalle;
 
-        public itemCarrito(decimal cantidad, decimal precio)
+        public itemCarrito(decimal cantidad, decimal precio, string detalle)
         {
 
             this.cantidad = cantidad;
             this.precio = precio;
-
+            this.detalle = detalle;
+            
         }
 
+        public decimal getCantidad()
+        {
+            return cantidad;
+        }
+        public decimal getPrecio()
+        {
+            return precio;
+        }
+
+        public string getDetalle()
+        {
+            return detalle;
+        }
         public decimal getTotal()
         {
             total = 0;
@@ -212,30 +231,80 @@ namespace CapaNegocio
     public class Carrito
     {
         decimal totalCarrito;
+        int nroOrden;
         List<itemCarrito> ListaPedido;
+        List<decimal> cantxProd;
         
         public Carrito()
         {
             ListaPedido = new List<itemCarrito> ();
-            
+            cantxProd = new List<decimal> ();
+            nroOrden = 0;
         }
 
+        public List<itemCarrito> getDetalleLista()
+        {
+            return ListaPedido;
+        }
+
+        public List<decimal> getCantxProd()
+        {
+            return cantxProd;
+        }
+
+        public void setCantxProd()
+        {
+            cantxProd.Clear();
+        }
+        public void setDetalleLista()
+        {
+            ListaPedido.Clear ();
+        }
         public void agregarAlCarrito(itemCarrito pedido)
         {
-            ListaPedido.Add (pedido);
+            int posicion = -1;
+
+            for (int i=0; i< ListaPedido .Count; i++)
+            {
+                if (ListaPedido[i].getDetalle() == pedido.getDetalle())
+                {
+                    posicion = i;
+                    break;
+                }
+            }
+            if(posicion != -1)
+            {
+                 cantxProd[posicion]+=pedido.getCantidad();
+
+            }
+            else
+            {
+                ListaPedido.Add(pedido);
+                cantxProd.Add(pedido.getCantidad());
+
+            }
+
+         
+
         }
 
+       
         public decimal getTotalCarrito()
         {
             totalCarrito = 0;
 
+            for(int i=0;i< ListaPedido.Count; i++)
+            {
+                totalCarrito += ListaPedido[i].getPrecio() * cantxProd[i];
+            }
             foreach (var item in ListaPedido)
             {
-                totalCarrito += item.getTotal();
+                
             }
 
             return totalCarrito;
         }
+
 
         public decimal borrarTodo()
         {
@@ -244,6 +313,60 @@ namespace CapaNegocio
             
         }
 
+        public void setFactura()
+        {
+            for (int i=0; i< ListaPedido.Count; i++)
+            {
+                var producto= ListaPedido[i].getDetalle();
+                var pu = ListaPedido[i].getPrecio();
+                var totalProducto = ListaPedido[i].getPrecio() * cantxProd[i];
+                
+            }
+        }
+
+    }
+
+    ///GENERACIÓN DE FACTURA/
+
+    public class Ticket
+    {
+        string cliente;
+        string formaPago;
+        DateTime fecha;
+        int nroOrden;
+        List<Carrito> lista;
+
+        public List<Carrito> getLista()
+        {
+            return lista;
+        }
+
+        //public Ticket(string cliente, string formaPago, DateTime fecha, int nroOrden, string producto, decimal cantidad, decimal total)
+        //{
+        //    this.cliente = cliente;
+        //    this.formaPago = formaPago;
+        //    this.fecha = fecha;
+        //    this.nroOrden = nroOrden;           
+        //    this.producto = producto;
+        //    this.cantidad = cantidad;
+        //    this.total = total;
+        //}
+
+        public void CrearPdf()
+        {
+            string filePath = "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR";  
+
+            Document doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+
+            doc.Open();
+
+            doc.Add(new Paragraph((float)fecha.ToOADate()));
+            doc.Add(new Paragraph(cliente));
+            doc.Add(new Paragraph(formaPago));
+            doc.Add(new Paragraph(nroOrden));
+            
+        }
     }
 
     //VALIDACION DE USUARIO

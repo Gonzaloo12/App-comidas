@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+
 namespace CapaUI
 {
     public partial class Categoria : Form
@@ -19,6 +20,7 @@ namespace CapaUI
         private Label[] labelsPlatos, labelsPrecios;
         private PictureBox[] pictureImagenes;
         private Carrito nuevaListaPedido;
+        private Ticket nuevoTicket;
 
         public Categoria()
         {
@@ -147,6 +149,7 @@ namespace CapaUI
             this.checkBox6.Hide();
             this.cantidad6.Hide();
             this.precio6.Hide();
+            this.label8.Hide();
 
             foreach (var postreNombre in postre.GetListaPostre())
             {
@@ -160,12 +163,15 @@ namespace CapaUI
 
         ///CARRITO//
 
-        public void ActualizarListBox(decimal cantidad, string plato)
+        public void ActualizarDataGridView()
         {
-            for (int i = 0; i < cantidad; i++)
+            dataGridView1.Rows.Clear();
+
+            for (int i = 0; i < nuevaListaPedido.getDetalleLista().Count; i++)
             {
-                listaPed.Items.Add(plato);
+                dataGridView1.Rows.Add(nuevaListaPedido.getCantxProd()[i], nuevaListaPedido.getDetalleLista()[i].getDetalle());
             }
+
         }
         public void actualizarCarrito()
         {
@@ -176,9 +182,9 @@ namespace CapaUI
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
-            itemCarrito nuevoItem = new itemCarrito(cantidad1.Value, decimal.Parse(precio1.Text));
+            itemCarrito nuevoItem = new itemCarrito(cantidad1.Value, decimal.Parse(precio1.Text), plato1.Text);
             nuevaListaPedido.agregarAlCarrito(nuevoItem);
-            ActualizarListBox(cantidad1.Value, plato1.Text);
+            ActualizarDataGridView();
             actualizarCarrito();
 
         }
@@ -188,10 +194,9 @@ namespace CapaUI
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
-            itemCarrito nuevoItem = new itemCarrito(cantidad2.Value, decimal.Parse(precio2.Text));
+            itemCarrito nuevoItem = new itemCarrito(cantidad2.Value, decimal.Parse(precio2.Text), plato2.Text);
             nuevaListaPedido.agregarAlCarrito(nuevoItem);
-            ActualizarListBox(cantidad2.Value, plato2.Text);
-
+            ActualizarDataGridView();
             actualizarCarrito();
 
         }
@@ -201,10 +206,9 @@ namespace CapaUI
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 
-            itemCarrito nuevoItem = new itemCarrito(cantidad3.Value, decimal.Parse(precio3.Text));
+            itemCarrito nuevoItem = new itemCarrito(cantidad3.Value, decimal.Parse(precio3.Text), plato3.Text);
             nuevaListaPedido.agregarAlCarrito(nuevoItem);
-            ActualizarListBox(cantidad3.Value, plato3.Text);
-
+            ActualizarDataGridView();
             actualizarCarrito();
 
         }
@@ -213,10 +217,9 @@ namespace CapaUI
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
 
-            itemCarrito nuevoItem = new itemCarrito(cantidad4.Value, decimal.Parse(precio4.Text));
+            itemCarrito nuevoItem = new itemCarrito(cantidad4.Value, decimal.Parse(precio4.Text), plato4.Text);
             nuevaListaPedido.agregarAlCarrito(nuevoItem);
-            ActualizarListBox(cantidad4.Value, plato4.Text);
-
+            ActualizarDataGridView();
             actualizarCarrito();
 
         }
@@ -224,10 +227,9 @@ namespace CapaUI
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
 
-            itemCarrito nuevoItem = new itemCarrito(cantidad5.Value, decimal.Parse(precio5.Text));
+            itemCarrito nuevoItem = new itemCarrito(cantidad5.Value, decimal.Parse(precio5.Text), plato5.Text);
             nuevaListaPedido.agregarAlCarrito(nuevoItem);
-            ActualizarListBox(cantidad5.Value, plato5.Text);
-
+            ActualizarDataGridView();
             actualizarCarrito();
 
         }
@@ -235,21 +237,48 @@ namespace CapaUI
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
 
-            itemCarrito nuevoItem = new itemCarrito(cantidad6.Value, decimal.Parse(precio6.Text));
-            nuevaListaPedido.agregarAlCarrito(nuevoItem);
-            ActualizarListBox(cantidad6.Value, plato6.Text);
-
-            actualizarCarrito();
+            if (cantidad1.Value > 0)
+            {
+                itemCarrito nuevoItem = new itemCarrito(cantidad6.Value, decimal.Parse(precio6.Text), plato6.Text);
+                nuevaListaPedido.agregarAlCarrito(nuevoItem);
+                ActualizarDataGridView();
+                actualizarCarrito();
+            }
 
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            totalnumero.Text = nuevaListaPedido.borrarTodo().ToString();
-            listaPed.Items.Clear();
+
+            DialogResult limpiar;
+            limpiar = MessageBox.Show("¿Está seguro que quiere eliminar todo?", "Sistema de Restauratedecomidasrapiddas", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (limpiar == DialogResult.Yes)
+            {
+                totalnumero.Text = nuevaListaPedido.borrarTodo().ToString();
+                nuevaListaPedido.setDetalleLista();
+                nuevaListaPedido.setCantxProd();
+                dataGridView1.Rows.Clear();
+
+            }
 
         }
 
+        private void hacerPedido_Click(object sender, EventArgs e)
+        {
+            DialogResult hacerPedido;
+            hacerPedido = MessageBox.Show("¿Está seguro que quiere hacer el pedido?", "Sistema de Restauratedecomidasrapiddas", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (hacerPedido == DialogResult.Yes)
+            {
+                //var nuevoTicket = new FormTicket();
 
+                //nuevoTicket.Controls.Add(new DataGridView());
+
+               
+
+                //nuevoTicket.Show();
+
+            }
+
+        }
     }
 }
