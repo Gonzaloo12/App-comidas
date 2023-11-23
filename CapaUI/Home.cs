@@ -53,6 +53,7 @@ namespace TP_FINAL
                     this.Location.X + (this.Width - modalSesion.Width) / 2,
                     this.Location.Y + (this.Height - modalSesion.Height) / 2);
                 modalSesion.Show();
+
             }
             else
             {
@@ -76,13 +77,27 @@ namespace TP_FINAL
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void sesion_Click(object sender, EventArgs e)
         {
+            if (iniciarSesion.Text == "Iniciar Sesión")
+            {
+                var modalSesion = new modal(iniciarSesion);
 
-        }
 
-        private void formCarrito_Click(object sender, EventArgs e)
-        {
+                modalSesion.StartPosition = FormStartPosition.Manual;
+                modalSesion.Location = new Point(
+                    this.Location.X + (this.Width - modalSesion.Width) / 2,
+                    this.Location.Y + (this.Height - modalSesion.Height) / 2);
+                modalSesion.Show();
+
+                sesion.Enabled = false;
+
+            }
+            else
+            {
+               
+                MessageBox.Show("Su usuario ya se encuentra activo");
+            }
 
 
         }

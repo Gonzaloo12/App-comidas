@@ -1,4 +1,5 @@
 ﻿using CapaNegocio;
+using CapaUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,46 +18,53 @@ namespace TP_FINAL
     public partial class modal : Form
     {
         private System.Windows.Forms.Button iniciarSesionButton;
+        public Usuario usuario = new Usuario();
+
+        public int estadoBandera
+        {
+            get
+            {
+                return usuario.getBandera();
+            }
+        }
+
         public modal(System.Windows.Forms.Button iniciarSesionButton)
         {
             InitializeComponent();
             this.iniciarSesionButton = iniciarSesionButton;
         }
 
-        //public System.Windows.Forms.Button IniciarSesionButton
-        //{
-        //    get; set;
-        //}
-
-        private void modalSesion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             
-            Usuario usuario = new Usuario();
-
-            if (usuario.ValidarUsuario(inputCorreo.Text, inputContra.Text))
+            if (usuario.getBandera() == 0) 
             {
-
-                MessageBox.Show("Ingreso correctamente");
-
-                this.Hide();
-               
-                if (iniciarSesionButton != null)
+                if (usuario.ValidarUsuario(inputCorreo.Text, inputContra.Text))
                 {
-                    iniciarSesionButton.Text = "Ver Menú";
+
+                    MessageBox.Show("Ingreso correctamente");
+                    this.Hide();
+
+                    if (iniciarSesionButton != null)
+                    {
+                        iniciarSesionButton.Text = "Ver Menú";
+                    }
+
+
+
                 }
-
-
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrecto");
+                }
 
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrecto");
+                
+                MessageBox.Show("Su sesión se encuentra activa");
             }
+
 
         }
 

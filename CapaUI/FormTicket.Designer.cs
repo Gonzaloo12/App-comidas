@@ -35,23 +35,23 @@
             pictureBox1 = new PictureBox();
             labelOrden = new Label();
             labelNro = new Label();
-            labelDate = new Label();
+            etiquetaFecha = new Label();
             labelCLiente = new Label();
             labelFecha = new Label();
             labelDatoCliente = new Label();
             printDocument1 = new System.Drawing.Printing.PrintDocument();
             printDocument2 = new System.Drawing.Printing.PrintDocument();
             dataGridView2 = new DataGridView();
+            Cantidad = new DataGridViewTextBoxColumn();
+            Producto = new DataGridViewTextBoxColumn();
+            precioUnitario = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
             labelTotalImporte = new Label();
             labelNroTotal = new Label();
             labelAclarar = new Label();
             medioPago = new Label();
             labelMedio = new Label();
             descargarPdf = new Button();
-            Producto = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            precioUnitario = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -97,21 +97,21 @@
             labelNro.TabIndex = 3;
             labelNro.Text = "00000";
             // 
-            // labelDate
+            // etiquetaFecha
             // 
-            labelDate.AutoSize = true;
-            labelDate.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelDate.Location = new Point(34, 179);
-            labelDate.Name = "labelDate";
-            labelDate.Size = new Size(70, 23);
-            labelDate.TabIndex = 4;
-            labelDate.Text = "Fecha:";
+            etiquetaFecha.AutoSize = true;
+            etiquetaFecha.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            etiquetaFecha.Location = new Point(399, 131);
+            etiquetaFecha.Name = "etiquetaFecha";
+            etiquetaFecha.Size = new Size(70, 23);
+            etiquetaFecha.TabIndex = 4;
+            etiquetaFecha.Text = "Fecha:";
             // 
             // labelCLiente
             // 
             labelCLiente.AutoSize = true;
             labelCLiente.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCLiente.Location = new Point(34, 231);
+            labelCLiente.Location = new Point(34, 177);
             labelCLiente.Name = "labelCLiente";
             labelCLiente.Size = new Size(76, 23);
             labelCLiente.TabIndex = 5;
@@ -121,7 +121,7 @@
             // 
             labelFecha.AutoSize = true;
             labelFecha.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFecha.Location = new Point(204, 179);
+            labelFecha.Location = new Point(577, 131);
             labelFecha.Name = "labelFecha";
             labelFecha.Size = new Size(71, 23);
             labelFecha.TabIndex = 6;
@@ -131,7 +131,7 @@
             // 
             labelDatoCliente.AutoSize = true;
             labelDatoCliente.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelDatoCliente.Location = new Point(203, 231);
+            labelDatoCliente.Location = new Point(203, 177);
             labelDatoCliente.Name = "labelDatoCliente";
             labelDatoCliente.Size = new Size(72, 23);
             labelDatoCliente.TabIndex = 7;
@@ -141,15 +141,43 @@
             // 
             dataGridView2.BackgroundColor = Color.White;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Producto, Cantidad, precioUnitario, Total });
-            dataGridView2.Location = new Point(34, 328);
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Cantidad, Producto, precioUnitario, Total });
+            dataGridView2.Location = new Point(34, 243);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.RowTemplate.Height = 29;
             dataGridView2.ScrollBars = ScrollBars.Vertical;
-            dataGridView2.Size = new Size(617, 210);
+            dataGridView2.Size = new Size(617, 358);
             dataGridView2.TabIndex = 9;
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.MinimumWidth = 6;
+            Cantidad.Name = "Cantidad";
+            Cantidad.Width = 80;
+            // 
+            // Producto
+            // 
+            Producto.HeaderText = "Producto";
+            Producto.MinimumWidth = 6;
+            Producto.Name = "Producto";
+            Producto.Width = 380;
+            // 
+            // precioUnitario
+            // 
+            precioUnitario.HeaderText = "P.U.";
+            precioUnitario.MinimumWidth = 6;
+            precioUnitario.Name = "precioUnitario";
+            precioUnitario.Width = 80;
+            // 
+            // Total
+            // 
+            Total.HeaderText = "Total";
+            Total.MinimumWidth = 6;
+            Total.Name = "Total";
+            Total.Width = 80;
             // 
             // labelTotalImporte
             // 
@@ -185,7 +213,7 @@
             // 
             medioPago.AutoSize = true;
             medioPago.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            medioPago.Location = new Point(203, 278);
+            medioPago.Location = new Point(568, 177);
             medioPago.Name = "medioPago";
             medioPago.Size = new Size(80, 23);
             medioPago.TabIndex = 14;
@@ -195,7 +223,7 @@
             // 
             labelMedio.AutoSize = true;
             labelMedio.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMedio.Location = new Point(34, 278);
+            labelMedio.Location = new Point(399, 177);
             labelMedio.Name = "labelMedio";
             labelMedio.Size = new Size(153, 23);
             labelMedio.TabIndex = 13;
@@ -213,34 +241,6 @@
             descargarPdf.Text = "Descargar PDF";
             descargarPdf.UseVisualStyleBackColor = false;
             // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.MinimumWidth = 6;
-            Producto.Name = "Producto";
-            Producto.Width = 380;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.Width = 80;
-            // 
-            // precioUnitario
-            // 
-            precioUnitario.HeaderText = "P.U.";
-            precioUnitario.MinimumWidth = 6;
-            precioUnitario.Name = "precioUnitario";
-            precioUnitario.Width = 80;
-            // 
-            // Total
-            // 
-            Total.HeaderText = "Total";
-            Total.MinimumWidth = 6;
-            Total.Name = "Total";
-            Total.Width = 80;
-            // 
             // FormTicket
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -257,12 +257,11 @@
             Controls.Add(labelDatoCliente);
             Controls.Add(labelFecha);
             Controls.Add(labelCLiente);
-            Controls.Add(labelDate);
+            Controls.Add(etiquetaFecha);
             Controls.Add(labelNro);
             Controls.Add(labelOrden);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "FormTicket";
             Text = "FormTicket";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
@@ -279,7 +278,7 @@
         private PictureBox pictureBox1;
         private Label labelOrden;
         private Label labelNro;
-        private Label labelDate;
+        private Label etiquetaFecha;
         private Label labelCLiente;
         private Label labelFecha;
         private Label labelDatoCliente;
@@ -292,8 +291,8 @@
         private Label medioPago;
         private Label labelMedio;
         private Button descargarPdf;
-        private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn Cantidad;
+        private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn precioUnitario;
         private DataGridViewTextBoxColumn Total;
     }

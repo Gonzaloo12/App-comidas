@@ -330,41 +330,19 @@ namespace CapaNegocio
 
     public class Ticket
     {
-        string cliente;
-        string formaPago;
-        DateTime fecha;
-        int nroOrden;
-        List<Carrito> lista;
-
-        public List<Carrito> getLista()
-        {
-            return lista;
-        }
-
-        //public Ticket(string cliente, string formaPago, DateTime fecha, int nroOrden, string producto, decimal cantidad, decimal total)
-        //{
-        //    this.cliente = cliente;
-        //    this.formaPago = formaPago;
-        //    this.fecha = fecha;
-        //    this.nroOrden = nroOrden;           
-        //    this.producto = producto;
-        //    this.cantidad = cantidad;
-        //    this.total = total;
-        //}
-
         public void CrearPdf()
         {
-            string filePath = "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR";  
+            //string filePath = "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR";  
 
-            Document doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+            //Document doc = new Document();
+            //PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
 
-            doc.Open();
+            //doc.Open();
 
-            doc.Add(new Paragraph((float)fecha.ToOADate()));
-            doc.Add(new Paragraph(cliente));
-            doc.Add(new Paragraph(formaPago));
-            doc.Add(new Paragraph(nroOrden));
+            //doc.Add(new Paragraph((float)fecha.ToOADate()));
+            //doc.Add(new Paragraph(cliente));
+            //doc.Add(new Paragraph(formaPago));
+            //doc.Add(new Paragraph(nroOrden));
             
         }
     }
@@ -372,10 +350,26 @@ namespace CapaNegocio
     //VALIDACION DE USUARIO
     public class Usuario
     {
+        string usuario;
+        string contrasenia;
+        int bandera;
+
+        public Usuario()
+        {
+            usuario = "UsuarioTp";
+            contrasenia = "ContraseniaTp";
+            bandera = 0;
+        }
+
+        public int getBandera()
+        {
+            return bandera;
+        }
         public bool ValidarUsuario(string usuario, string contrasenia)
         {
-            if (usuario == "UsuarioTp" && contrasenia == "ContraseñaTp")
+            if (usuario == this.usuario && contrasenia == this.contrasenia)
             {
+                bandera = 1;
                 return true;
             }
             else
@@ -384,9 +378,14 @@ namespace CapaNegocio
 
             }
         }
+
+        public string getUsuario()
+        {
+            return usuario;
+        }
     }
 
-
+    
 
     
 }

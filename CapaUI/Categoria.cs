@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_FINAL;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -20,15 +21,46 @@ namespace CapaUI
         private Label[] labelsPlatos, labelsPrecios;
         private PictureBox[] pictureImagenes;
         private Carrito nuevaListaPedido;
-        private Ticket nuevoTicket;
+        private Ticket nuevoTicket;             
+        
+        public string MedioPago;
+
+        public string getMedioPago()
+        {
+            return MedioPago;
+        }
+        
+        public void setMedioPago()
+        {
+            if(listaMedios.SelectedItem!= null)
+            {
+                MedioPago = listaMedios.SelectedItem.ToString();
+            }
+          
+        }
+  
+        
+        
+        public string ImporteTotal
+        {
+            get;set;
+        }
+
+
+        public DataGridViewRowCollection DatosDataGridView
+        {
+            get { return dataGridView2.Rows; }
+        }
 
         public Categoria()
         {
             InitializeComponent();
+
             labelsPlatos = new Label[] { plato1, plato2, plato3, plato4, plato5, plato6 };
             labelsPrecios = new Label[] { precio1, precio2, precio3, precio4, precio5, precio6 };
             pictureImagenes = new PictureBox[] { imagen1, imagen2, imagen3, imagen4, imagen5, imagen6 };
             nuevaListaPedido = new Carrito();
+
 
             Font btnSeleccionado = new Font(btnBurger.Font, FontStyle.Bold | FontStyle.Underline);
             btnBurger.Font = btnSeleccionado;
@@ -165,11 +197,11 @@ namespace CapaUI
 
         public void ActualizarDataGridView()
         {
-            dataGridView1.Rows.Clear();
+            dataGridView2.Rows.Clear();
 
             for (int i = 0; i < nuevaListaPedido.getDetalleLista().Count; i++)
             {
-                dataGridView1.Rows.Add(nuevaListaPedido.getCantxProd()[i], nuevaListaPedido.getDetalleLista()[i].getDetalle());
+                dataGridView2.Rows.Add(nuevaListaPedido.getCantxProd()[i], nuevaListaPedido.getDetalleLista()[i].getDetalle(), nuevaListaPedido.getDetalleLista()[i].getPrecio(), nuevaListaPedido.getDetalleLista()[i].getPrecio() * nuevaListaPedido.getCantxProd()[i]);
             }
 
         }
@@ -177,6 +209,7 @@ namespace CapaUI
         {
             var total = nuevaListaPedido.getTotalCarrito();
             totalnumero.Text = total.ToString();
+            ImporteTotal = totalnumero.Text;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -257,28 +290,51 @@ namespace CapaUI
                 totalnumero.Text = nuevaListaPedido.borrarTodo().ToString();
                 nuevaListaPedido.setDetalleLista();
                 nuevaListaPedido.setCantxProd();
-                dataGridView1.Rows.Clear();
+                dataGridView2.Rows.Clear();
 
             }
 
         }
+
+        //set medio pago
 
         private void hacerPedido_Click(object sender, EventArgs e)
         {
             DialogResult hacerPedido;
-            hacerPedido = MessageBox.Show("¿Está seguro que quiere hacer el pedido?", "Sistema de Restauratedecomidasrapiddas", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (hacerPedido == DialogResult.Yes)
-            {
-                //var nuevoTicket = new FormTicket();
+            setMedioPago();
 
-                //nuevoTicket.Controls.Add(new DataGridView());
+                if (dataGridView2.RowCount == 1)
+                {
+                    MessageBox.Show("Todavía no agregaste ningún producto al carrito", "Mi carrito", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (listaMedios.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Por favor, seleccione una forma de pago", "Forma de pago", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        setMedioPago();
+                    }
+                    else
+                    {
+                        hacerPedido = MessageBox.Show("¿Está seguro que quiere hacer el pedido?", "Sistema de Restauratedecomidasrapiddas", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-               
+                        if (hacerPedido == DialogResult.Yes)
+                        {
+                            var nuevoTicket = new FormTicket(this);
 
-                //nuevoTicket.Show();
+                            nuevoTicket.Show();
 
-            }
+                        }
+                    }
+
+
+                }
+            
+           
+            
+           
 
         }
+
     }
 }

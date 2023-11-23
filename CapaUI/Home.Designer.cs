@@ -32,10 +32,11 @@ namespace TP_FINAL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             AboutUs = new Button();
             Menu = new Button();
-            MiCarrito = new Button();
             btnHome = new Button();
             menu_cate = new Panel();
             iniciarSesion = new Button();
+            labelUser = new Label();
+            sesion = new Button();
             menu_cate.SuspendLayout();
             SuspendLayout();
             // 
@@ -75,27 +76,6 @@ namespace TP_FINAL
             Menu.UseVisualStyleBackColor = false;
             Menu.Click += Menu_Click;
             // 
-            // MiCarrito
-            // 
-            MiCarrito.BackColor = Color.Transparent;
-            MiCarrito.FlatAppearance.BorderColor = Color.Black;
-            MiCarrito.FlatAppearance.BorderSize = 0;
-            MiCarrito.FlatAppearance.MouseDownBackColor = Color.Black;
-            MiCarrito.FlatStyle = FlatStyle.Flat;
-            MiCarrito.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            MiCarrito.ForeColor = Color.Transparent;
-            MiCarrito.Location = new Point(478, 28);
-            MiCarrito.Name = "MiCarrito";
-            MiCarrito.Padding = new Padding(3, 0, 0, 0);
-            MiCarrito.Size = new Size(120, 50);
-            MiCarrito.TabIndex = 8;
-            MiCarrito.TabStop = false;
-            MiCarrito.Text = "Mi carrito";
-            MiCarrito.TextAlign = ContentAlignment.MiddleLeft;
-            MiCarrito.TextImageRelation = TextImageRelation.TextBeforeImage;
-            MiCarrito.UseVisualStyleBackColor = false;
-            MiCarrito.Click += formCarrito_Click;
-            // 
             // btnHome
             // 
             btnHome.BackColor = Color.Transparent;
@@ -129,13 +109,38 @@ namespace TP_FINAL
             iniciarSesion.FlatStyle = FlatStyle.Flat;
             iniciarSesion.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             iniciarSesion.ForeColor = Color.White;
-            iniciarSesion.Location = new Point(163, 368);
+            iniciarSesion.Location = new Point(184, 381);
             iniciarSesion.Name = "iniciarSesion";
             iniciarSesion.Size = new Size(202, 63);
             iniciarSesion.TabIndex = 15;
             iniciarSesion.Text = "Iniciar Sesión";
             iniciarSesion.UseVisualStyleBackColor = false;
             iniciarSesion.Click += iniciarSesion_Click;
+            // 
+            // labelUser
+            // 
+            labelUser.AutoSize = true;
+            labelUser.BackColor = Color.Transparent;
+            labelUser.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelUser.ForeColor = Color.White;
+            labelUser.Location = new Point(1238, 40);
+            labelUser.Name = "labelUser";
+            labelUser.Size = new Size(0, 24);
+            labelUser.TabIndex = 40;
+            // 
+            // sesion
+            // 
+            sesion.BackColor = Color.Transparent;
+            sesion.FlatStyle = FlatStyle.Flat;
+            sesion.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            sesion.ForeColor = Color.White;
+            sesion.Location = new Point(1193, 28);
+            sesion.Name = "sesion";
+            sesion.Size = new Size(161, 38);
+            sesion.TabIndex = 41;
+            sesion.Text = "Iniciar Sesión";
+            sesion.UseVisualStyleBackColor = false;
+            sesion.Click += sesion_Click;
             // 
             // Home
             // 
@@ -144,24 +149,27 @@ namespace TP_FINAL
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1394, 683);
+            Controls.Add(sesion);
+            Controls.Add(labelUser);
             Controls.Add(menu_cate);
             Controls.Add(btnHome);
-            Controls.Add(MiCarrito);
             Controls.Add(Menu);
             Controls.Add(AboutUs);
             Name = "Home";
             menu_cate.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private System.Windows.Forms.Button home;
         private System.Windows.Forms.Button AboutUs;
         private System.Windows.Forms.Button Menu;
-        private System.Windows.Forms.Button MiCarrito;
         private Button btnHome;
         public Panel menu_cate;
         internal Button iniciarSesion;
+        private Label labelUser;
+        internal Button sesion;
     }
 }
 
