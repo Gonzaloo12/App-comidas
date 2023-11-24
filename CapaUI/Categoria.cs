@@ -18,29 +18,34 @@ namespace CapaUI
 {
     public partial class Categoria : Form
     {
-        private Label[] labelsPlatos, labelsPrecios;
-        private PictureBox[] pictureImagenes;
-        private Carrito nuevaListaPedido;
-        private modal ModalForm;
+        Label[] labelsPlatos, labelsPrecios;
+        PictureBox[] pictureImagenes;
+        Carrito nuevaListaPedido;
         public string MedioPago;
+        modal modalForm;
+
+        public void ActualizarEstadoSesion()
+        {
+
+        }
 
         public string getMedioPago()
         {
             return MedioPago;
         }
-        
+
         public void setMedioPago()
         {
-            if(listaMedios.SelectedItem!= null)
+            if (listaMedios.SelectedItem != null)
             {
                 MedioPago = listaMedios.SelectedItem.ToString();
             }
-          
+
         }
-        
+
         public string ImporteTotal
         {
-            get;set;
+            get; set;
         }
 
 
@@ -85,10 +90,7 @@ namespace CapaUI
                 labelsPrecios[i].Text = (burgerNombre.GetPrecio()).ToString();
                 pictureImagenes[i].Image = System.Drawing.Image.FromFile(burgerNombre.GetPicture());
                 i++;
-
             }
-
-            
         }
 
         //CLIC BEBIDA
@@ -208,7 +210,6 @@ namespace CapaUI
             totalnumero.Text = total.ToString();
             ImporteTotal = totalnumero.Text;
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -218,9 +219,6 @@ namespace CapaUI
             actualizarCarrito();
 
         }
-
-
-
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -228,11 +226,7 @@ namespace CapaUI
             nuevaListaPedido.agregarAlCarrito(nuevoItem);
             ActualizarDataGridView();
             actualizarCarrito();
-
         }
-
-
-
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -250,7 +244,6 @@ namespace CapaUI
             ActualizarDataGridView();
             actualizarCarrito();
         }
-
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -259,7 +252,6 @@ namespace CapaUI
             ActualizarDataGridView();
             actualizarCarrito();
         }
-
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -284,7 +276,6 @@ namespace CapaUI
                 nuevaListaPedido.setDetalleLista();
                 nuevaListaPedido.setCantxProd();
                 dataGridView2.Rows.Clear();
-
             }
 
         }
@@ -296,37 +287,32 @@ namespace CapaUI
             DialogResult hacerPedido;
             setMedioPago();
 
-
-
-                if (dataGridView2.RowCount == 1)
+            if (dataGridView2.RowCount == 1)
+            {
+                MessageBox.Show("Todavía no agregaste ningún producto al carrito", "Mi carrito", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (listaMedios.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Todavía no agregaste ningún producto al carrito", "Mi carrito", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Por favor, seleccione una forma de pago", "Forma de pago", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setMedioPago();
                 }
                 else
                 {
-                    if (listaMedios.SelectedIndex == -1)
+
+                    hacerPedido = MessageBox.Show("¿Está seguro que quiere hacer el pedido?", "Sistema de Restauratedecomidasrapiddas", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (hacerPedido == DialogResult.Yes)
                     {
-                        MessageBox.Show("Por favor, seleccione una forma de pago", "Forma de pago", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        setMedioPago();
+                        var nuevoTicket = new FormTicket(this);
+
+                        nuevoTicket.Show();
+
                     }
-                    else
-                    {
-                        hacerPedido = MessageBox.Show("¿Está seguro que quiere hacer el pedido?", "Sistema de Restauratedecomidasrapiddas", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (hacerPedido == DialogResult.Yes)
-                        {
-                            var nuevoTicket = new FormTicket(this);
-
-                            nuevoTicket.Show();
-
-                        }
-                    }
-
-
                 }
-            
 
+            }
         }
-
     }
 }

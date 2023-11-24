@@ -33,8 +33,6 @@
             label1 = new Label();
             bindingSource1 = new BindingSource(components);
             pictureBox1 = new PictureBox();
-            labelOrden = new Label();
-            labelNro = new Label();
             etiquetaFecha = new Label();
             labelCLiente = new Label();
             labelFecha = new Label();
@@ -78,31 +76,11 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // labelOrden
-            // 
-            labelOrden.AutoSize = true;
-            labelOrden.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelOrden.Location = new Point(34, 131);
-            labelOrden.Name = "labelOrden";
-            labelOrden.Size = new Size(121, 23);
-            labelOrden.TabIndex = 2;
-            labelOrden.Text = "N° de orden:";
-            // 
-            // labelNro
-            // 
-            labelNro.AutoSize = true;
-            labelNro.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelNro.Location = new Point(203, 131);
-            labelNro.Name = "labelNro";
-            labelNro.Size = new Size(65, 23);
-            labelNro.TabIndex = 3;
-            labelNro.Text = "00000";
-            // 
             // etiquetaFecha
             // 
             etiquetaFecha.AutoSize = true;
             etiquetaFecha.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            etiquetaFecha.Location = new Point(395, 131);
+            etiquetaFecha.Location = new Point(380, 131);
             etiquetaFecha.Name = "etiquetaFecha";
             etiquetaFecha.Size = new Size(70, 23);
             etiquetaFecha.TabIndex = 4;
@@ -112,7 +90,7 @@
             // 
             labelCLiente.AutoSize = true;
             labelCLiente.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCLiente.Location = new Point(34, 177);
+            labelCLiente.Location = new Point(34, 131);
             labelCLiente.Name = "labelCLiente";
             labelCLiente.Size = new Size(76, 23);
             labelCLiente.TabIndex = 5;
@@ -122,7 +100,7 @@
             // 
             labelFecha.AutoSize = true;
             labelFecha.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFecha.Location = new Point(564, 131);
+            labelFecha.Location = new Point(462, 131);
             labelFecha.Name = "labelFecha";
             labelFecha.Size = new Size(71, 23);
             labelFecha.TabIndex = 6;
@@ -132,7 +110,7 @@
             // 
             labelDatoCliente.AutoSize = true;
             labelDatoCliente.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelDatoCliente.Location = new Point(203, 177);
+            labelDatoCliente.Location = new Point(127, 131);
             labelDatoCliente.Name = "labelDatoCliente";
             labelDatoCliente.Size = new Size(72, 23);
             labelDatoCliente.TabIndex = 7;
@@ -214,7 +192,7 @@
             // 
             medioPago.AutoSize = true;
             medioPago.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            medioPago.Location = new Point(564, 177);
+            medioPago.Location = new Point(195, 187);
             medioPago.Name = "medioPago";
             medioPago.Size = new Size(80, 23);
             medioPago.TabIndex = 14;
@@ -224,7 +202,7 @@
             // 
             labelMedio.AutoSize = true;
             labelMedio.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMedio.Location = new Point(395, 177);
+            labelMedio.Location = new Point(34, 187);
             labelMedio.Name = "labelMedio";
             labelMedio.Size = new Size(153, 23);
             labelMedio.TabIndex = 13;
@@ -260,8 +238,6 @@
             Controls.Add(labelFecha);
             Controls.Add(labelCLiente);
             Controls.Add(etiquetaFecha);
-            Controls.Add(labelNro);
-            Controls.Add(labelOrden);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Name = "FormTicket";
@@ -278,8 +254,6 @@
         private Label label1;
         private BindingSource bindingSource1;
         private PictureBox pictureBox1;
-        private Label labelOrden;
-        private Label labelNro;
         private Label etiquetaFecha;
         private Label labelCLiente;
         private Label labelFecha;

@@ -56,7 +56,6 @@ namespace TP_FINAL
             AboutUs.TabIndex = 3;
             AboutUs.Text = "Sobre Nosotros";
             AboutUs.UseVisualStyleBackColor = false;
-            AboutUs.Click += AboutUs_Click;
             // 
             // Menu
             // 
@@ -105,6 +104,7 @@ namespace TP_FINAL
             // 
             // iniciarSesion
             // 
+            iniciarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             iniciarSesion.BackColor = Color.FromArgb(255, 138, 0);
             iniciarSesion.FlatStyle = FlatStyle.Flat;
             iniciarSesion.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -155,6 +155,7 @@ namespace TP_FINAL
             Controls.Add(btnHome);
             Controls.Add(Menu);
             Controls.Add(AboutUs);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "Home";
             menu_cate.ResumeLayout(false);
             ResumeLayout(false);

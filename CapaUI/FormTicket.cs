@@ -78,22 +78,22 @@ namespace CapaUI
                     {
                         string rutaPDF = saveFileDialog.FileName;
 
-                        
+
                         using (PdfWriter writer = new PdfWriter(rutaPDF))
                         {
                             using (PdfDocument pdf = new PdfDocument(writer))
                             {
-                                
+
                                 Document document = new Document(pdf);
 
-                                
+
                                 using (MemoryStream imageStream = new MemoryStream())
                                 {
-                                    
+
                                     memoryImage.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
                                     byte[] imageBytes = imageStream.ToArray();
 
-                                    
+
                                     iText.Layout.Element.Image image = new iText.Layout.Element.Image(ImageDataFactory.Create(imageBytes));
                                     document.Add(image);
                                 }

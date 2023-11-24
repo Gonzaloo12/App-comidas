@@ -15,17 +15,10 @@ namespace TP_FINAL
 {
     public partial class Home : Form
     {
-        private modal modalForm;
-
         public Home()
         {
             InitializeComponent();
-        }
-
-
-        private void AboutUs_Click(object sender, EventArgs e)
-        {
-
+        
         }
 
         private void Menu_Click(object sender, EventArgs e)
@@ -53,7 +46,6 @@ namespace TP_FINAL
                     this.Location.X + (this.Width - modalForm.Width) / 2,
                     this.Location.Y + (this.Height - modalForm.Height) / 2);
                 modalForm.Show();
-
             }
             else
             {

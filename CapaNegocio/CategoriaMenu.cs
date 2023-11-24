@@ -231,7 +231,6 @@ namespace CapaNegocio
     public class Carrito
     {
         decimal totalCarrito;
-        int nroOrden;
         List<itemCarrito> ListaPedido;
         List<decimal> cantxProd;
         
@@ -239,7 +238,6 @@ namespace CapaNegocio
         {
             ListaPedido = new List<itemCarrito> ();
             cantxProd = new List<decimal> ();
-            nroOrden = 0;
         }
 
         public List<itemCarrito> getDetalleLista()
@@ -282,9 +280,7 @@ namespace CapaNegocio
                 ListaPedido.Add(pedido);
                 cantxProd.Add(pedido.getCantidad());
 
-            }
-
-         
+            }       
 
         }
 
@@ -326,27 +322,7 @@ namespace CapaNegocio
 
     }
 
-    ///GENERACIÓN DE FACTURA/
-
-    public class Ticket
-    {
-        public void CrearPdf()
-        {
-            //string filePath = "D:\\PROGRAMACIÓN\\IFTS11\\SEGUNDO CUATRIMESTRE\\LUN Desarrollo OO\\TP FINAL INTEGRADOR";  
-
-            //Document doc = new Document();
-            //PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
-
-            //doc.Open();
-
-            //doc.Add(new Paragraph((float)fecha.ToOADate()));
-            //doc.Add(new Paragraph(cliente));
-            //doc.Add(new Paragraph(formaPago));
-            //doc.Add(new Paragraph(nroOrden));
-            
-        }
-    }
-
+    
     //VALIDACION DE USUARIO
     public class Usuario
     {

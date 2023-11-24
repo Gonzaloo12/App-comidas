@@ -385,7 +385,7 @@
             btnLimpiar.BackColor = Color.FromArgb(255, 138, 0);
             btnLimpiar.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(1075, 521);
+            btnLimpiar.Location = new Point(1068, 518);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(106, 42);
             btnLimpiar.TabIndex = 171;
@@ -450,7 +450,7 @@
             hacerPedido.BackColor = Color.FromArgb(255, 138, 0);
             hacerPedido.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             hacerPedido.ForeColor = Color.White;
-            hacerPedido.Location = new Point(1202, 519);
+            hacerPedido.Location = new Point(1197, 518);
             hacerPedido.Name = "hacerPedido";
             hacerPedido.Size = new Size(119, 42);
             hacerPedido.TabIndex = 180;
@@ -464,9 +464,9 @@
             listaMedios.Font = new Font("Calibri", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             listaMedios.FormattingEnabled = true;
             listaMedios.Items.AddRange(new object[] { "Efectivo", "Tarjeta de Débito", "Tarjeta de Crédito", "Mercado Pago" });
-            listaMedios.Location = new Point(1159, 461);
+            listaMedios.Location = new Point(1135, 461);
             listaMedios.Name = "listaMedios";
-            listaMedios.Size = new Size(137, 29);
+            listaMedios.Size = new Size(155, 29);
             listaMedios.TabIndex = 182;
             // 
             // labelMedio
