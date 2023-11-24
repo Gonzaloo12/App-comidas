@@ -18,22 +18,17 @@ namespace TP_FINAL
     public partial class modal : Form
     {
         private System.Windows.Forms.Button iniciarSesionButton;
+        private System.Windows.Forms.Button sesion;
         public Usuario usuario = new Usuario();
 
-        public int estadoBandera
-        {
-            get
-            {
-                return usuario.getBandera();
-            }
-        }
-
-        public modal(System.Windows.Forms.Button iniciarSesionButton)
+        public modal(System.Windows.Forms.Button iniciarSesionButton, System.Windows.Forms.Button sesion)
         {
             InitializeComponent();
             this.iniciarSesionButton = iniciarSesionButton;
+            this.sesion = sesion;
         }
 
+        //Btn iniciar sesión
         private void button2_Click(object sender, EventArgs e)
         {
             
@@ -44,10 +39,12 @@ namespace TP_FINAL
 
                     MessageBox.Show("Ingreso correctamente");
                     this.Hide();
-
+                    
                     if (iniciarSesionButton != null)
                     {
                         iniciarSesionButton.Text = "Ver Menú";
+                        sesion.Hide();
+                        
                     }
 
 

@@ -21,8 +21,7 @@ namespace CapaUI
         private Label[] labelsPlatos, labelsPrecios;
         private PictureBox[] pictureImagenes;
         private Carrito nuevaListaPedido;
-        private Ticket nuevoTicket;             
-        
+        private modal ModalForm;
         public string MedioPago;
 
         public string getMedioPago()
@@ -38,8 +37,6 @@ namespace CapaUI
             }
           
         }
-  
-        
         
         public string ImporteTotal
         {
@@ -60,7 +57,6 @@ namespace CapaUI
             labelsPrecios = new Label[] { precio1, precio2, precio3, precio4, precio5, precio6 };
             pictureImagenes = new PictureBox[] { imagen1, imagen2, imagen3, imagen4, imagen5, imagen6 };
             nuevaListaPedido = new Carrito();
-
 
             Font btnSeleccionado = new Font(btnBurger.Font, FontStyle.Bold | FontStyle.Underline);
             btnBurger.Font = btnSeleccionado;
@@ -92,6 +88,7 @@ namespace CapaUI
 
             }
 
+            
         }
 
         //CLIC BEBIDA
@@ -245,8 +242,6 @@ namespace CapaUI
             actualizarCarrito();
 
         }
-
-
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -254,7 +249,6 @@ namespace CapaUI
             nuevaListaPedido.agregarAlCarrito(nuevoItem);
             ActualizarDataGridView();
             actualizarCarrito();
-
         }
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
@@ -264,7 +258,6 @@ namespace CapaUI
             nuevaListaPedido.agregarAlCarrito(nuevoItem);
             ActualizarDataGridView();
             actualizarCarrito();
-
         }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
@@ -303,6 +296,8 @@ namespace CapaUI
             DialogResult hacerPedido;
             setMedioPago();
 
+
+
                 if (dataGridView2.RowCount == 1)
                 {
                     MessageBox.Show("Todavía no agregaste ningún producto al carrito", "Mi carrito", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -330,9 +325,6 @@ namespace CapaUI
 
                 }
             
-           
-            
-           
 
         }
 

@@ -52,6 +52,7 @@
             medioPago = new Label();
             labelMedio = new Label();
             descargarPdf = new Button();
+            printDocument3 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -101,7 +102,7 @@
             // 
             etiquetaFecha.AutoSize = true;
             etiquetaFecha.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            etiquetaFecha.Location = new Point(399, 131);
+            etiquetaFecha.Location = new Point(395, 131);
             etiquetaFecha.Name = "etiquetaFecha";
             etiquetaFecha.Size = new Size(70, 23);
             etiquetaFecha.TabIndex = 4;
@@ -121,7 +122,7 @@
             // 
             labelFecha.AutoSize = true;
             labelFecha.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFecha.Location = new Point(577, 131);
+            labelFecha.Location = new Point(564, 131);
             labelFecha.Name = "labelFecha";
             labelFecha.Size = new Size(71, 23);
             labelFecha.TabIndex = 6;
@@ -213,7 +214,7 @@
             // 
             medioPago.AutoSize = true;
             medioPago.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            medioPago.Location = new Point(568, 177);
+            medioPago.Location = new Point(564, 177);
             medioPago.Name = "medioPago";
             medioPago.Size = new Size(80, 23);
             medioPago.TabIndex = 14;
@@ -223,7 +224,7 @@
             // 
             labelMedio.AutoSize = true;
             labelMedio.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMedio.Location = new Point(399, 177);
+            labelMedio.Location = new Point(395, 177);
             labelMedio.Name = "labelMedio";
             labelMedio.Size = new Size(153, 23);
             labelMedio.TabIndex = 13;
@@ -240,13 +241,14 @@
             descargarPdf.TabIndex = 15;
             descargarPdf.Text = "Descargar PDF";
             descargarPdf.UseVisualStyleBackColor = false;
+            descargarPdf.Click += descargarPdf_Click;
             // 
             // FormTicket
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(680, 713);
+            ClientSize = new Size(687, 713);
             Controls.Add(descargarPdf);
             Controls.Add(medioPago);
             Controls.Add(labelMedio);
@@ -295,5 +297,6 @@
         private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn precioUnitario;
         private DataGridViewTextBoxColumn Total;
+        private System.Drawing.Printing.PrintDocument printDocument3;
     }
 }

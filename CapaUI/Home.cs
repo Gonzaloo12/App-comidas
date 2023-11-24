@@ -15,6 +15,8 @@ namespace TP_FINAL
 {
     public partial class Home : Form
     {
+        private modal modalForm;
+
         public Home()
         {
             InitializeComponent();
@@ -45,14 +47,12 @@ namespace TP_FINAL
         {
             if (iniciarSesion.Text == "Iniciar Sesión")
             {
-                var modalSesion = new modal(iniciarSesion);
-
-
-                modalSesion.StartPosition = FormStartPosition.Manual;
-                modalSesion.Location = new Point(
-                    this.Location.X + (this.Width - modalSesion.Width) / 2,
-                    this.Location.Y + (this.Height - modalSesion.Height) / 2);
-                modalSesion.Show();
+                var modalForm = new modal(iniciarSesion, sesion);
+                modalForm.StartPosition = FormStartPosition.Manual;
+                modalForm.Location = new Point(
+                    this.Location.X + (this.Width - modalForm.Width) / 2,
+                    this.Location.Y + (this.Height - modalForm.Height) / 2);
+                modalForm.Show();
 
             }
             else
@@ -81,7 +81,7 @@ namespace TP_FINAL
         {
             if (iniciarSesion.Text == "Iniciar Sesión")
             {
-                var modalSesion = new modal(iniciarSesion);
+                var modalSesion = new modal(iniciarSesion, sesion);
 
 
                 modalSesion.StartPosition = FormStartPosition.Manual;
@@ -90,16 +90,15 @@ namespace TP_FINAL
                     this.Location.Y + (this.Height - modalSesion.Height) / 2);
                 modalSesion.Show();
 
-                sesion.Enabled = false;
-
             }
             else
             {
-               
+
                 MessageBox.Show("Su usuario ya se encuentra activo");
             }
 
 
         }
+
     }
 }

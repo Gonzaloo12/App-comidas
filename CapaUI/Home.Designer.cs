@@ -162,7 +162,6 @@ namespace TP_FINAL
         }
 
         #endregion
-        private System.Windows.Forms.Button home;
         private System.Windows.Forms.Button AboutUs;
         private System.Windows.Forms.Button Menu;
         private Button btnHome;
