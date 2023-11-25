@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapaUI", "CapaUI\CapaUI.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{A8C7AFD5-9BC8-4BCE-A97A-6F0392F7C708}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{3E9D2F69-E977-4351-AA4F-EE83E643D0D0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{A8C7AFD5-9BC8-4BCE-A97A-6F0392F7C708}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8C7AFD5-9BC8-4BCE-A97A-6F0392F7C708}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8C7AFD5-9BC8-4BCE-A97A-6F0392F7C708}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E9D2F69-E977-4351-AA4F-EE83E643D0D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E9D2F69-E977-4351-AA4F-EE83E643D0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E9D2F69-E977-4351-AA4F-EE83E643D0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E9D2F69-E977-4351-AA4F-EE83E643D0D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
